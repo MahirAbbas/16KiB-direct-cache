@@ -1,3 +1,4 @@
-[debug] not up to date. inChanged = true, force = false
-[debug] Updating ProjectRef(uri("file:/home/mahir/git/spinalhdl/cache-labs/direct-cache/16KiB-direct-cache/cache/"), "projectname")...
-[debug] Done updating ProjectRef(uri("file:/home/mahir/git/spinalhdl/cache-labs/direct-cache/16KiB-direct-cache/cache/"), "projectname")
+[warn] spinalhdl-core_2.12-1.10.1-sources.jar no longer exists at /home/mahir/.cache/coursier/v1/https/repo1.maven.org/maven2/com/github/spinalhdl/spinalhdl-core_2.12/1.10.1/spinalhdl-core_2.12-1.10.1-sources.jar
+[debug] not up to date. inChanged = false, force = false
+[debug] Updating ProjectRef(uri("file:/home/mahir/fun/git/16KiB-direct-cache/cache/"), "projectname")...
+[debug] Done updating ProjectRef(uri("file:/home/mahir/fun/git/16KiB-direct-cache/cache/"), "projectname")

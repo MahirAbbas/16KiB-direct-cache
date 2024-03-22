@@ -1165,3 +1165,1143 @@ org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
 	at java.lang.Thread.run(Thread.java:840)
 [0m
+2024.03.20 14:01:49 INFO  Started: Metals version 1.2.2 in folders '/home/mahir/fun/git/16KiB-direct-cache/cache' for client Neovim 0.9.5.[0m
+14:01:49.419 [pool-2-thread-1] INFO org.flywaydb.core.internal.license.VersionPrinter -- Flyway Community Edition 9.22.3 by Redgate
+14:01:49.420 [pool-2-thread-1] INFO org.flywaydb.core.internal.license.VersionPrinter -- See release notes here: https://rd.gt/416ObMi
+14:01:49.420 [pool-2-thread-1] INFO org.flywaydb.core.internal.license.VersionPrinter -- 
+14:01:49.421 [pool-2-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Scanning for classpath resources at 'classpath:db/callback' ...
+14:01:49.421 [pool-2-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Determining location urls for classpath:db/callback using ClassLoader java.net.URLClassLoader@6a2bcfcb ...
+14:01:49.421 [pool-2-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Unable to resolve location classpath:db/callback.
+14:01:49.421 [pool-2-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Scanning for classpath resources at 'classpath:db/migration' ...
+14:01:49.421 [pool-2-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Determining location urls for classpath:db/migration using ClassLoader java.net.URLClassLoader@6a2bcfcb ...
+14:01:49.421 [pool-2-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Scanning URL: jar:file:/home/mahir/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scalameta/metals_2.13/1.2.2/metals_2.13-1.2.2.jar!/db/migration
+14:01:49.422 [pool-2-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/
+14:01:49.422 [pool-2-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/V1__Create_tables.sql
+14:01:49.423 [pool-2-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/V2__Server_discovery.sql
+14:01:49.423 [pool-2-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/V3__Jar_symbols.sql
+14:01:49.423 [pool-2-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/V4__Fingerprints.sql
+14:01:49.423 [pool-2-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Scanning for classes at classpath:db/migration
+14:01:49.424 [pool-2-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+14:01:49.424 [pool-2-thread-1] DEBUG org.flywaydb.core.internal.resource.ResourceNameValidator -- Validating V4__Fingerprints.sql
+14:01:49.425 [pool-2-thread-1] DEBUG org.flywaydb.core.internal.resource.ResourceNameValidator -- Validating V1__Create_tables.sql
+14:01:49.425 [pool-2-thread-1] DEBUG org.flywaydb.core.internal.resource.ResourceNameValidator -- Validating V2__Server_discovery.sql
+14:01:49.425 [pool-2-thread-1] DEBUG org.flywaydb.core.internal.resource.ResourceNameValidator -- Validating V3__Jar_symbols.sql
+14:01:49.476 [pool-2-thread-1] INFO org.flywaydb.core.FlywayExecutor -- Database: jdbc:h2:file:/home/mahir/fun/git/16KiB-direct-cache/cache/.metals/metals (H2 2.2)
+14:01:49.476 [pool-2-thread-1] DEBUG org.flywaydb.core.FlywayExecutor -- Driver: H2 JDBC Driver 2.2.224 (2023-09-17)
+14:01:49.476 [pool-2-thread-1] DEBUG org.flywaydb.core.FlywayExecutor -- DDL Transactions Supported: false
+14:01:49.476 [pool-2-thread-1] DEBUG org.flywaydb.core.internal.schemahistory.SchemaHistoryFactory -- Schemas: 
+14:01:49.476 [pool-2-thread-1] DEBUG org.flywaydb.core.internal.schemahistory.SchemaHistoryFactory -- Default schema: null
+14:01:49.478 [pool-2-thread-1] WARN org.flywaydb.core.internal.database.base.Database -- Flyway upgrade recommended: H2 2.2.224 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.2.220.
+14:01:49.479 [pool-2-thread-1] DEBUG org.flywaydb.core.internal.callback.SqlScriptCallbackFactory -- Scanning for SQL callbacks ...
+14:01:49.479 [pool-2-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+14:01:49.483 [pool-2-thread-1] DEBUG org.flywaydb.core.internal.command.DbValidate -- Validating migrations ...
+14:01:49.484 [pool-2-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+14:01:49.488 [pool-2-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+14:01:49.488 [pool-2-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V4__Fingerprints.sql (filename: V4__Fingerprints.sql)
+14:01:49.488 [pool-2-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V1__Create_tables.sql (filename: V1__Create_tables.sql)
+14:01:49.488 [pool-2-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V2__Server_discovery.sql (filename: V2__Server_discovery.sql)
+14:01:49.488 [pool-2-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V3__Jar_symbols.sql (filename: V3__Jar_symbols.sql)
+14:01:49.488 [pool-2-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+14:01:49.488 [pool-2-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V4__Fingerprints.sql (filename: V4__Fingerprints.sql)
+14:01:49.488 [pool-2-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V1__Create_tables.sql (filename: V1__Create_tables.sql)
+14:01:49.488 [pool-2-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V2__Server_discovery.sql (filename: V2__Server_discovery.sql)
+14:01:49.489 [pool-2-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V3__Jar_symbols.sql (filename: V3__Jar_symbols.sql)
+14:01:49.493 [pool-2-thread-1] INFO org.flywaydb.core.internal.command.DbValidate -- Successfully validated 4 migrations (execution time 00:00.010s)
+14:01:49.494 [pool-2-thread-1] DEBUG org.flywaydb.core.internal.command.DbSchemas -- Skipping creation of existing schema: "PUBLIC"
+14:01:49.497 [pool-2-thread-1] INFO org.flywaydb.core.internal.command.DbMigrate -- Current version of schema "PUBLIC": 4
+14:01:49.499 [pool-2-thread-1] INFO org.flywaydb.core.internal.command.DbMigrate -- Schema "PUBLIC" is up to date. No migration necessary.
+14:01:49.506 [pool-2-thread-1] DEBUG org.flywaydb.core.FlywayExecutor -- Memory usage: 57 of 120M
+2024.03.20 14:01:49 INFO  Attempting to connect to the build server...[0m
+2024.03.20 14:01:49 INFO  Bloop uses /home/mahir/.jabba/jdk/openjdk@1.17.0 defined at /home/mahir/.bloop/bloop.json[0m
+2024.03.20 14:01:51 INFO  no build target found for /home/mahir/fun/git/16KiB-direct-cache/cache/hw/spinal/projectname/Controller.scala. Using presentation compiler with project's scala-library version: 3.3.1[0m
+2024.03.20 14:01:51 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /home/mahir/fun/git/16KiB-direct-cache/cache/.metals/bsp.trace.json or /home/mahir/.cache/metals/bsp.trace.json[0m
+2024.03.20 14:01:53 ERROR /usr/lib/jvm/java-17-openjdk-amd64 release file missing JAVA_VERSION property - using Bloop's JVM version 17[0m
+2024.03.20 14:01:53 ERROR /usr/lib/jvm/java-17-openjdk-amd64 release file missing JAVA_VERSION property - using Bloop's JVM version 17[0m
+2024.03.20 14:01:53 INFO  Attempting to connect to the build server...[0m
+2024.03.20 14:01:53 INFO  Bloop uses /home/mahir/.jabba/jdk/openjdk@1.17.0 defined at /home/mahir/.bloop/bloop.json[0m
+2024.03.20 14:01:53 INFO  Attempting to connect to the build server...[0m
+2024.03.20 14:01:53 INFO  Bloop uses /home/mahir/.jabba/jdk/openjdk@1.17.0 defined at /home/mahir/.bloop/bloop.json[0m
+2024.03.20 14:01:53 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /home/mahir/fun/git/16KiB-direct-cache/cache/project/project/.metals/bsp.trace.json or /home/mahir/.cache/metals/bsp.trace.json[0m
+2024.03.20 14:01:53 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /home/mahir/fun/git/16KiB-direct-cache/cache/project/.metals/bsp.trace.json or /home/mahir/.cache/metals/bsp.trace.json[0m
+2024.03.20 14:01:53 INFO  running '/usr/bin/sbt -Dbloop.export-jar-classifiers=sources bloopInstall'[0m
+2024.03.20 14:01:53 INFO  copying runtime jar...[0m
+2024.03.20 14:01:53 ERROR /usr/lib/jvm/java-17-openjdk-amd64 release file missing JAVA_VERSION property - using Bloop's JVM version 17[0m
+2024.03.20 14:01:53 ERROR /usr/lib/jvm/java-17-openjdk-amd64 release file missing JAVA_VERSION property - using Bloop's JVM version 17[0m
+2024.03.20 14:01:53 INFO  time: Connected to build server in 4.2s[0m
+2024.03.20 14:01:53 INFO  Connected to Build server: Bloop v1.5.15[0m
+2024.03.20 14:01:56 WARN  Could not find java sources in /usr/lib/jvm/src.zip, /usr/lib/jvm/lib/src.zip, /usr/lib/jvm/java-11-openjdk/src.zip, /usr/lib/jvm/java-11-openjdk/lib/src.zip. Java symbols will not be available.[0m
+2024.03.20 14:01:56 WARN  unexpected dependency: /home/mahir/.cache/coursier/v1/https/repo1.maven.org/maven2/com/github/spinalhdl/spinalhdl-core_2.12/1.10.1/spinalhdl-core_2.12-1.10.1-sources.jar[0m
+2024.03.20 14:01:56 WARN  unexpected dependency: /home/mahir/.cache/coursier/v1/https/repo1.maven.org/maven2/com/github/spinalhdl/spinalhdl-lib_2.12/1.10.1/spinalhdl-lib_2.12-1.10.1-sources.jar[0m
+2024.03.20 14:01:56 WARN  unexpected dependency: /home/mahir/.cache/coursier/v1/https/repo1.maven.org/maven2/com/github/spinalhdl/spinalhdl-idsl-plugin_2.12/1.10.1/spinalhdl-idsl-plugin_2.12-1.10.1-sources.jar[0m
+2024.03.20 14:01:56 WARN  unexpected dependency: /home/mahir/.cache/coursier/v1/https/repo1.maven.org/maven2/com/github/spinalhdl/spinalhdl-sim_2.12/1.10.1/spinalhdl-sim_2.12-1.10.1-sources.jar[0m
+2024.03.20 14:01:56 WARN  unexpected dependency: /home/mahir/.cache/coursier/v1/https/repo1.maven.org/maven2/com/github/spinalhdl/spinalhdl-idsl-payload_2.12/1.10.1/spinalhdl-idsl-payload_2.12-1.10.1-sources.jar[0m
+2024.03.20 14:01:56 WARN  unexpected dependency: /home/mahir/.cache/coursier/v1/https/repo1.maven.org/maven2/ch/epfl/scala/sbt-bloop_2.12_1.0/1.5.15/sbt-bloop-1.5.15-sources.jar[0m
+2024.03.20 14:01:56 WARN  Could not find java sources in /usr/lib/jvm/src.zip, /usr/lib/jvm/lib/src.zip, /usr/lib/jvm/java-11-openjdk/src.zip, /usr/lib/jvm/java-11-openjdk/lib/src.zip. Java symbols will not be available.[0m
+2024.03.20 14:01:56 WARN  Could not find java sources in /usr/lib/jvm/src.zip, /usr/lib/jvm/lib/src.zip, /usr/lib/jvm/java-11-openjdk/src.zip, /usr/lib/jvm/java-11-openjdk/lib/src.zip. Java symbols will not be available.[0m
+2024.03.20 14:01:56 INFO  time: indexed workspace in 2.31s[0m
+2024.03.20 14:01:56 WARN  no build target for: /home/mahir/fun/git/16KiB-direct-cache/cache/hw/spinal/projectname/Controller.scala[0m
+2024.03.20 14:01:58 INFO  [info] welcome to sbt 1.6.0 (Oracle Corporation Java 11.0.22)[0m
+2024.03.20 14:01:59 INFO  [info] loading settings for project cache-build-build-build from metals.sbt ...[0m
+2024.03.20 14:01:59 INFO  [info] loading project definition from /home/mahir/fun/git/16KiB-direct-cache/cache/project/project/project[0m
+2024.03.20 14:01:59 INFO  [warn] sbt-bloop-1.5.15.jar no longer exists at /home/mahir/.cache/coursier/v1/https/repo1.maven.org/maven2/ch/epfl/scala/sbt-bloop_2.12_1.0/1.5.15/sbt-bloop-1.5.15.jar[0m
+2024.03.20 14:02:01 INFO  [info] loading settings for project cache-build-build from metals.sbt ...[0m
+2024.03.20 14:02:01 INFO  [info] loading project definition from /home/mahir/fun/git/16KiB-direct-cache/cache/project/project[0m
+2024.03.20 14:02:01 INFO  [warn] sbt-bloop-1.5.15-sources.jar no longer exists at /home/mahir/.cache/coursier/v1/https/repo1.maven.org/maven2/ch/epfl/scala/sbt-bloop_2.12_1.0/1.5.15/sbt-bloop-1.5.15-sources.jar[0m
+2024.03.20 14:02:01 INFO  [success] Generated .bloop/cache-build-build.json[0m
+2024.03.20 14:02:01 INFO  [success] Total time: 1 s, completed 20 Mar 2024, 14:02:02[0m
+2024.03.20 14:02:02 INFO  [info] loading settings for project cache-build from metals.sbt,plugins.sbt ...[0m
+2024.03.20 14:02:02 INFO  [info] loading project definition from /home/mahir/fun/git/16KiB-direct-cache/cache/project[0m
+2024.03.20 14:02:02 INFO  [success] Generated .bloop/cache-build.json[0m
+2024.03.20 14:02:02 INFO  [success] Total time: 0 s, completed 20 Mar 2024, 14:02:02[0m
+2024.03.20 14:02:03 INFO  [info] loading settings for project projectname from build.sbt ...[0m
+2024.03.20 14:02:03 INFO  [info] set current project to projectname (in build file:/home/mahir/fun/git/16KiB-direct-cache/cache/)[0m
+2024.03.20 14:02:03 INFO  [warn] spinalhdl-core_2.12-1.10.1.jar no longer exists at /home/mahir/.cache/coursier/v1/https/repo1.maven.org/maven2/com/github/spinalhdl/spinalhdl-core_2.12/1.10.1/spinalhdl-core_2.12-1.10.1.jar[0m
+2024.03.20 14:02:05 INFO  [warn] spinalhdl-core_2.12-1.10.1-sources.jar no longer exists at /home/mahir/.cache/coursier/v1/https/repo1.maven.org/maven2/com/github/spinalhdl/spinalhdl-core_2.12/1.10.1/spinalhdl-core_2.12-1.10.1-sources.jar[0m
+2024.03.20 14:02:05 INFO  [success] Generated .bloop/projectname-test.json[0m
+2024.03.20 14:02:05 INFO  [success] Generated .bloop/projectname.json[0m
+2024.03.20 14:02:05 INFO  [success] Total time: 2 s, completed 20 Mar 2024, 14:02:05[0m
+2024.03.20 14:02:05 INFO  time: ran 'sbt bloopInstall' in 12s[0m
+2024.03.20 14:02:05 INFO  Disconnecting from Bloop session...[0m
+2024.03.20 14:02:05 INFO  Shut down connection with build server.[0m
+2024.03.20 14:02:05 INFO  Shut down connection with build server.[0m
+2024.03.20 14:02:05 INFO  Shut down connection with build server.[0m
+2024.03.20 14:02:05 INFO  Attempting to connect to the build server...[0m
+2024.03.20 14:02:05 INFO  Bloop uses /home/mahir/.jabba/jdk/openjdk@1.17.0 defined at /home/mahir/.bloop/bloop.json[0m
+2024.03.20 14:02:05 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /home/mahir/fun/git/16KiB-direct-cache/cache/.metals/bsp.trace.json or /home/mahir/.cache/metals/bsp.trace.json[0m
+2024.03.20 14:02:05 INFO  Attempting to connect to the build server...[0m
+2024.03.20 14:02:05 INFO  Bloop uses /home/mahir/.jabba/jdk/openjdk@1.17.0 defined at /home/mahir/.bloop/bloop.json[0m
+2024.03.20 14:02:05 INFO  Attempting to connect to the build server...[0m
+2024.03.20 14:02:05 INFO  Bloop uses /home/mahir/.jabba/jdk/openjdk@1.17.0 defined at /home/mahir/.bloop/bloop.json[0m
+2024.03.20 14:02:05 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /home/mahir/fun/git/16KiB-direct-cache/cache/project/project/.metals/bsp.trace.json or /home/mahir/.cache/metals/bsp.trace.json[0m
+2024.03.20 14:02:05 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /home/mahir/fun/git/16KiB-direct-cache/cache/project/.metals/bsp.trace.json or /home/mahir/.cache/metals/bsp.trace.json[0m
+2024.03.20 14:02:05 INFO  time: Connected to build server in 48ms[0m
+2024.03.20 14:02:05 INFO  Connected to Build server: Bloop v1.5.15[0m
+2024.03.20 14:02:06 INFO  compiling projectname (5 scala sources)[0m
+2024.03.20 14:02:06 WARN  Could not find java sources in /usr/lib/jvm/src.zip, /usr/lib/jvm/lib/src.zip, /usr/lib/jvm/java-11-openjdk/src.zip, /usr/lib/jvm/java-11-openjdk/lib/src.zip. Java symbols will not be available.[0m
+2024.03.20 14:02:06 WARN  Could not find java sources in /usr/lib/jvm/src.zip, /usr/lib/jvm/lib/src.zip, /usr/lib/jvm/java-11-openjdk/src.zip, /usr/lib/jvm/java-11-openjdk/lib/src.zip. Java symbols will not be available.[0m
+2024.03.20 14:02:06 WARN  Could not find java sources in /usr/lib/jvm/src.zip, /usr/lib/jvm/lib/src.zip, /usr/lib/jvm/java-11-openjdk/src.zip, /usr/lib/jvm/java-11-openjdk/lib/src.zip. Java symbols will not be available.[0m
+2024.03.20 14:02:06 INFO  time: indexed workspace in 0.98s[0m
+2024.03.20 14:02:11 INFO  time: compiled projectname in 5.41s[0m
+2024.03.20 14:02:11 INFO  compiling projectname (5 scala sources)[0m
+2024.03.20 14:02:11 INFO  time: compiled projectname in 0.27s[0m
+2024.03.20 14:02:56 INFO  compiling projectname (5 scala sources)[0m
+2024.03.20 14:02:56 INFO  time: compiled projectname in 0.18s[0m
+2024.03.20 14:02:56 INFO  compiling projectname (5 scala sources)[0m
+2024.03.20 14:02:56 INFO  time: compiled projectname in 0.16s[0m
+2024.03.20 14:08:37 INFO  compiling projectname (5 scala sources)[0m
+2024.03.20 14:08:37 INFO  time: compiled projectname in 0.14s[0m
+2024.03.20 14:08:37 INFO  compiling projectname (5 scala sources)[0m
+2024.03.20 14:08:37 INFO  time: compiled projectname in 0.12s[0m
+2024.03.20 14:08:38 INFO  Shutting down server[0m
+2024.03.20 14:08:38 INFO  shutting down Metals[0m
+2024.03.20 14:08:38 INFO  Shut down connection with build server.[0m
+2024.03.20 14:08:38 INFO  Shut down connection with build server.[0m
+2024.03.20 14:08:38 INFO  Shut down connection with build server.[0m
+2024.03.20 14:08:58 INFO  Started: Metals version 1.2.2 in folders '/home/mahir/fun/git/16KiB-direct-cache/cache' for client Neovim 0.9.5.[0m
+14:08:58.449 [pool-2-thread-1] INFO org.flywaydb.core.internal.license.VersionPrinter -- Flyway Community Edition 9.22.3 by Redgate
+14:08:58.451 [pool-2-thread-1] INFO org.flywaydb.core.internal.license.VersionPrinter -- See release notes here: https://rd.gt/416ObMi
+14:08:58.451 [pool-2-thread-1] INFO org.flywaydb.core.internal.license.VersionPrinter -- 
+14:08:58.452 [pool-2-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Scanning for classpath resources at 'classpath:db/callback' ...
+14:08:58.452 [pool-2-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Determining location urls for classpath:db/callback using ClassLoader java.net.URLClassLoader@6a2bcfcb ...
+14:08:58.452 [pool-2-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Unable to resolve location classpath:db/callback.
+14:08:58.452 [pool-2-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Scanning for classpath resources at 'classpath:db/migration' ...
+14:08:58.452 [pool-2-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Determining location urls for classpath:db/migration using ClassLoader java.net.URLClassLoader@6a2bcfcb ...
+14:08:58.452 [pool-2-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Scanning URL: jar:file:/home/mahir/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scalameta/metals_2.13/1.2.2/metals_2.13-1.2.2.jar!/db/migration
+14:08:58.453 [pool-2-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/
+14:08:58.453 [pool-2-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/V1__Create_tables.sql
+14:08:58.453 [pool-2-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/V2__Server_discovery.sql
+14:08:58.453 [pool-2-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/V3__Jar_symbols.sql
+14:08:58.453 [pool-2-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/V4__Fingerprints.sql
+14:08:58.453 [pool-2-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Scanning for classes at classpath:db/migration
+14:08:58.455 [pool-2-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+14:08:58.455 [pool-2-thread-1] DEBUG org.flywaydb.core.internal.resource.ResourceNameValidator -- Validating V4__Fingerprints.sql
+14:08:58.455 [pool-2-thread-1] DEBUG org.flywaydb.core.internal.resource.ResourceNameValidator -- Validating V1__Create_tables.sql
+14:08:58.455 [pool-2-thread-1] DEBUG org.flywaydb.core.internal.resource.ResourceNameValidator -- Validating V2__Server_discovery.sql
+14:08:58.455 [pool-2-thread-1] DEBUG org.flywaydb.core.internal.resource.ResourceNameValidator -- Validating V3__Jar_symbols.sql
+14:08:58.504 [pool-2-thread-1] INFO org.flywaydb.core.FlywayExecutor -- Database: jdbc:h2:file:/home/mahir/fun/git/16KiB-direct-cache/cache/.metals/metals (H2 2.2)
+14:08:58.504 [pool-2-thread-1] DEBUG org.flywaydb.core.FlywayExecutor -- Driver: H2 JDBC Driver 2.2.224 (2023-09-17)
+14:08:58.505 [pool-2-thread-1] DEBUG org.flywaydb.core.FlywayExecutor -- DDL Transactions Supported: false
+14:08:58.505 [pool-2-thread-1] DEBUG org.flywaydb.core.internal.schemahistory.SchemaHistoryFactory -- Schemas: 
+14:08:58.505 [pool-2-thread-1] DEBUG org.flywaydb.core.internal.schemahistory.SchemaHistoryFactory -- Default schema: null
+14:08:58.507 [pool-2-thread-1] WARN org.flywaydb.core.internal.database.base.Database -- Flyway upgrade recommended: H2 2.2.224 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.2.220.
+14:08:58.507 [pool-2-thread-1] DEBUG org.flywaydb.core.internal.callback.SqlScriptCallbackFactory -- Scanning for SQL callbacks ...
+14:08:58.508 [pool-2-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+14:08:58.511 [pool-2-thread-1] DEBUG org.flywaydb.core.internal.command.DbValidate -- Validating migrations ...
+14:08:58.513 [pool-2-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+14:08:58.516 [pool-2-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+14:08:58.516 [pool-2-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V4__Fingerprints.sql (filename: V4__Fingerprints.sql)
+14:08:58.516 [pool-2-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V1__Create_tables.sql (filename: V1__Create_tables.sql)
+14:08:58.516 [pool-2-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V2__Server_discovery.sql (filename: V2__Server_discovery.sql)
+14:08:58.516 [pool-2-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V3__Jar_symbols.sql (filename: V3__Jar_symbols.sql)
+14:08:58.516 [pool-2-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+14:08:58.516 [pool-2-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V4__Fingerprints.sql (filename: V4__Fingerprints.sql)
+14:08:58.516 [pool-2-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V1__Create_tables.sql (filename: V1__Create_tables.sql)
+14:08:58.516 [pool-2-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V2__Server_discovery.sql (filename: V2__Server_discovery.sql)
+14:08:58.516 [pool-2-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V3__Jar_symbols.sql (filename: V3__Jar_symbols.sql)
+14:08:58.521 [pool-2-thread-1] INFO org.flywaydb.core.internal.command.DbValidate -- Successfully validated 4 migrations (execution time 00:00.009s)
+14:08:58.522 [pool-2-thread-1] DEBUG org.flywaydb.core.internal.command.DbSchemas -- Skipping creation of existing schema: "PUBLIC"
+14:08:58.524 [pool-2-thread-1] INFO org.flywaydb.core.internal.command.DbMigrate -- Current version of schema "PUBLIC": 4
+14:08:58.526 [pool-2-thread-1] INFO org.flywaydb.core.internal.command.DbMigrate -- Schema "PUBLIC" is up to date. No migration necessary.
+14:08:58.533 [pool-2-thread-1] DEBUG org.flywaydb.core.FlywayExecutor -- Memory usage: 49 of 120M
+2024.03.20 14:08:58 INFO  skipping build import with status 'Installed'[0m
+2024.03.20 14:08:58 INFO  Attempting to connect to the build server...[0m
+2024.03.20 14:08:58 INFO  Bloop uses /home/mahir/.jabba/jdk/openjdk@1.17.0 defined at /home/mahir/.bloop/bloop.json[0m
+2024.03.20 14:08:58 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /home/mahir/fun/git/16KiB-direct-cache/cache/.metals/bsp.trace.json or /home/mahir/.cache/metals/bsp.trace.json[0m
+2024.03.20 14:08:58 INFO  Attempting to connect to the build server...[0m
+2024.03.20 14:08:58 INFO  Bloop uses /home/mahir/.jabba/jdk/openjdk@1.17.0 defined at /home/mahir/.bloop/bloop.json[0m
+2024.03.20 14:08:58 INFO  Attempting to connect to the build server...[0m
+2024.03.20 14:08:58 INFO  Bloop uses /home/mahir/.jabba/jdk/openjdk@1.17.0 defined at /home/mahir/.bloop/bloop.json[0m
+2024.03.20 14:08:58 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /home/mahir/fun/git/16KiB-direct-cache/cache/project/project/.metals/bsp.trace.json or /home/mahir/.cache/metals/bsp.trace.json[0m
+2024.03.20 14:08:58 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /home/mahir/fun/git/16KiB-direct-cache/cache/project/.metals/bsp.trace.json or /home/mahir/.cache/metals/bsp.trace.json[0m
+2024.03.20 14:08:58 INFO  time: Connected to build server in 0.2s[0m
+2024.03.20 14:08:58 INFO  Connected to Build server: Bloop v1.5.15[0m
+2024.03.20 14:09:00 INFO  no build target found for /home/mahir/fun/git/16KiB-direct-cache/cache/hw/spinal/projectname/Config.scala. Using presentation compiler with project's scala-library version: 3.3.1[0m
+2024.03.20 14:09:01 WARN  Could not find java sources in /usr/lib/jvm/src.zip, /usr/lib/jvm/lib/src.zip, /usr/lib/jvm/java-11-openjdk/src.zip, /usr/lib/jvm/java-11-openjdk/lib/src.zip. Java symbols will not be available.[0m
+2024.03.20 14:09:01 WARN  Could not find java sources in /usr/lib/jvm/src.zip, /usr/lib/jvm/lib/src.zip, /usr/lib/jvm/java-11-openjdk/src.zip, /usr/lib/jvm/java-11-openjdk/lib/src.zip. Java symbols will not be available.[0m
+2024.03.20 14:09:01 WARN  Could not find java sources in /usr/lib/jvm/src.zip, /usr/lib/jvm/lib/src.zip, /usr/lib/jvm/java-11-openjdk/src.zip, /usr/lib/jvm/java-11-openjdk/lib/src.zip. Java symbols will not be available.[0m
+2024.03.20 14:09:01 INFO  time: indexed workspace in 1.32s[0m
+2024.03.20 14:09:01 INFO  compiling projectname (5 scala sources)[0m
+2024.03.20 14:09:01 INFO  time: compiled projectname in 0.91s[0m
+Mar 20, 2024 2:09:02 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 2
+Mar 20, 2024 2:09:02 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 3
+2024.03.20 14:09:01 INFO  compiling projectname (5 scala sources)[0m
+2024.03.20 14:09:02 INFO  time: compiled projectname in 0.12s[0m
+2024.03.20 14:12:29 INFO  compiling projectname (5 scala sources)[0m
+2024.03.20 14:12:29 INFO  time: compiled projectname in 0.13s[0m
+2024.03.20 14:12:29 INFO  compiling projectname (5 scala sources)[0m
+2024.03.20 14:12:29 INFO  time: compiled projectname in 0.14s[0m
+2024.03.20 14:25:51 ERROR Failed to tokenize input for semantic tokens for /home/mahir/fun/git/16KiB-direct-cache/cache/hw/spinal/projectname/MyTopLevel.scala
+scala.meta.tokenizers.TokenizeException: <input>:17: error: Non-zero integral values may not have a leading zero.
+  val dirty = Bool*09
+                   ^
+	at scala.meta.internal.tokenizers.Reporter.syntaxError(Reporter.scala:23)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError$(Reporter.scala:23)
+	at scala.meta.internal.tokenizers.Reporter$$anon$1.syntaxError(Reporter.scala:33)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError(Reporter.scala:25)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError$(Reporter.scala:25)
+	at scala.meta.internal.tokenizers.Reporter$$anon$1.syntaxError(Reporter.scala:33)
+	at scala.meta.internal.tokenizers.LegacyScanner.restOfUncertainToken$1(LegacyScanner.scala:856)
+	at scala.meta.internal.tokenizers.LegacyScanner.getNumber(LegacyScanner.scala:872)
+	at scala.meta.internal.tokenizers.LegacyScanner.fetchZero$1(LegacyScanner.scala:330)
+	at scala.meta.internal.tokenizers.LegacyScanner.fetchToken(LegacyScanner.scala:332)
+	at scala.meta.internal.tokenizers.LegacyScanner.nextToken(LegacyScanner.scala:211)
+	at scala.meta.internal.tokenizers.LegacyScanner.foreach(LegacyScanner.scala:1011)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.uncachedTokenize(ScalametaTokenizer.scala:24)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.$anonfun$tokenize$1(ScalametaTokenizer.scala:17)
+	at scala.collection.concurrent.TrieMap.getOrElseUpdate(TrieMap.scala:962)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.tokenize(ScalametaTokenizer.scala:17)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer$$anon$2.apply(ScalametaTokenizer.scala:332)
+	at scala.meta.tokenizers.Api$XtensionTokenizeDialectInput.tokenize(Api.scala:25)
+	at scala.meta.tokenizers.Api$XtensionTokenizeInputLike.tokenize(Api.scala:14)
+	at scala.meta.internal.metals.SemanticTokensProvider$.getTokens(SemanticTokensProvider.scala:30)
+	at scala.meta.internal.metals.SemanticTokensProvider$.provide(SemanticTokensProvider.scala:89)
+	at scala.meta.internal.metals.Compilers.$anonfun$semanticTokens$3(Compilers.scala:541)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.lang.Thread.run(Thread.java:829)
+[0m
+2024.03.20 14:26:21 INFO  compiling projectname (5 scala sources)[0m
+2024.03.20 14:26:21 INFO  time: compiled projectname in 0.11s[0m
+2024.03.20 14:26:21 INFO  compiling projectname (5 scala sources)[0m
+2024.03.20 14:26:21 INFO  time: compiled projectname in 96ms[0m
+2024.03.20 14:29:50 INFO  compiling projectname (5 scala sources)[0m
+2024.03.20 14:29:50 INFO  time: compiled projectname in 0.11s[0m
+2024.03.20 14:29:50 INFO  compiling projectname (5 scala sources)[0m
+2024.03.20 14:29:50 INFO  time: compiled projectname in 0.1s[0m
+2024.03.20 14:34:00 ERROR Failed to tokenize input for semantic tokens for /home/mahir/fun/git/16KiB-direct-cache/cache/hw/spinal/projectname/Controller.scala
+scala.meta.tokenizers.TokenizeException: <input>:26: error: unclosed quoted identifier
+  val address = Bits(32 bits)`
+                             ^
+	at scala.meta.internal.tokenizers.Reporter.syntaxError(Reporter.scala:23)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError$(Reporter.scala:23)
+	at scala.meta.internal.tokenizers.Reporter$$anon$1.syntaxError(Reporter.scala:33)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError(Reporter.scala:25)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError$(Reporter.scala:25)
+	at scala.meta.internal.tokenizers.Reporter$$anon$1.syntaxError(Reporter.scala:33)
+	at scala.meta.internal.tokenizers.LegacyScanner.getBackquotedIdent(LegacyScanner.scala:489)
+	at scala.meta.internal.tokenizers.LegacyScanner.fetchToken(LegacyScanner.scala:337)
+	at scala.meta.internal.tokenizers.LegacyScanner.nextToken(LegacyScanner.scala:211)
+	at scala.meta.internal.tokenizers.LegacyScanner.foreach(LegacyScanner.scala:1011)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.uncachedTokenize(ScalametaTokenizer.scala:24)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.$anonfun$tokenize$1(ScalametaTokenizer.scala:17)
+	at scala.collection.concurrent.TrieMap.getOrElseUpdate(TrieMap.scala:962)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.tokenize(ScalametaTokenizer.scala:17)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer$$anon$2.apply(ScalametaTokenizer.scala:332)
+	at scala.meta.tokenizers.Api$XtensionTokenizeDialectInput.tokenize(Api.scala:25)
+	at scala.meta.tokenizers.Api$XtensionTokenizeInputLike.tokenize(Api.scala:14)
+	at scala.meta.internal.metals.SemanticTokensProvider$.getTokens(SemanticTokensProvider.scala:30)
+	at scala.meta.internal.metals.SemanticTokensProvider$.provide(SemanticTokensProvider.scala:89)
+	at scala.meta.internal.metals.Compilers.$anonfun$semanticTokens$3(Compilers.scala:541)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.lang.Thread.run(Thread.java:829)
+[0m
+2024.03.20 14:40:13 INFO  compiling projectname (5 scala sources)[0m
+2024.03.20 14:40:13 INFO  time: compiled projectname in 0.12s[0m
+2024.03.20 14:40:13 INFO  compiling projectname (5 scala sources)[0m
+2024.03.20 14:40:13 INFO  time: compiled projectname in 95ms[0m
+2024.03.20 14:40:22 INFO  compiling projectname (5 scala sources)[0m
+2024.03.20 14:40:22 INFO  time: compiled projectname in 0.12s[0m
+2024.03.20 14:40:22 INFO  compiling projectname (5 scala sources)[0m
+2024.03.20 14:40:22 INFO  time: compiled projectname in 95ms[0m
+2024.03.20 14:40:24 INFO  Shutting down server[0m
+2024.03.20 14:40:24 INFO  shutting down Metals[0m
+2024.03.20 14:40:24 INFO  Shut down connection with build server.[0m
+2024.03.20 14:40:24 INFO  Shut down connection with build server.[0m
+2024.03.20 14:40:24 INFO  Shut down connection with build server.[0m
+2024.03.20 14:56:48 INFO  Started: Metals version 1.2.2 in folders '/home/mahir/fun/git/16KiB-direct-cache/cache' for client VSCodium 1.87.2.
+14:56:48.794 [pool-1-thread-5] INFO org.flywaydb.core.internal.license.VersionPrinter -- Flyway Community Edition 9.22.3 by Redgate
+14:56:48.796 [pool-1-thread-5] INFO org.flywaydb.core.internal.license.VersionPrinter -- See release notes here: https://rd.gt/416ObMi
+14:56:48.796 [pool-1-thread-5] INFO org.flywaydb.core.internal.license.VersionPrinter -- 
+14:56:48.797 [pool-1-thread-5] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Scanning for classpath resources at 'classpath:db/callback' ...
+14:56:48.797 [pool-1-thread-5] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Determining location urls for classpath:db/callback using ClassLoader jdk.internal.loader.ClassLoaders$AppClassLoader@5cb0d902 ...
+14:56:48.797 [pool-1-thread-5] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Unable to resolve location classpath:db/callback.
+14:56:48.797 [pool-1-thread-5] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Scanning for classpath resources at 'classpath:db/migration' ...
+14:56:48.797 [pool-1-thread-5] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Determining location urls for classpath:db/migration using ClassLoader jdk.internal.loader.ClassLoaders$AppClassLoader@5cb0d902 ...
+14:56:48.797 [pool-1-thread-5] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Scanning URL: jar:file:/home/mahir/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scalameta/metals_2.13/1.2.2/metals_2.13-1.2.2.jar!/db/migration
+14:56:48.799 [pool-1-thread-5] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/
+14:56:48.799 [pool-1-thread-5] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/V1__Create_tables.sql
+14:56:48.799 [pool-1-thread-5] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/V2__Server_discovery.sql
+14:56:48.799 [pool-1-thread-5] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/V3__Jar_symbols.sql
+14:56:48.799 [pool-1-thread-5] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/V4__Fingerprints.sql
+14:56:48.799 [pool-1-thread-5] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Scanning for classes at classpath:db/migration
+14:56:48.801 [pool-1-thread-5] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+14:56:48.801 [pool-1-thread-5] DEBUG org.flywaydb.core.internal.resource.ResourceNameValidator -- Validating V4__Fingerprints.sql
+14:56:48.801 [pool-1-thread-5] DEBUG org.flywaydb.core.internal.resource.ResourceNameValidator -- Validating V1__Create_tables.sql
+14:56:48.801 [pool-1-thread-5] DEBUG org.flywaydb.core.internal.resource.ResourceNameValidator -- Validating V2__Server_discovery.sql
+14:56:48.802 [pool-1-thread-5] DEBUG org.flywaydb.core.internal.resource.ResourceNameValidator -- Validating V3__Jar_symbols.sql
+14:56:48.852 [pool-1-thread-5] INFO org.flywaydb.core.FlywayExecutor -- Database: jdbc:h2:file:/home/mahir/fun/git/16KiB-direct-cache/cache/.metals/metals (H2 2.2)
+14:56:48.852 [pool-1-thread-5] DEBUG org.flywaydb.core.FlywayExecutor -- Driver: H2 JDBC Driver 2.2.224 (2023-09-17)
+14:56:48.852 [pool-1-thread-5] DEBUG org.flywaydb.core.FlywayExecutor -- DDL Transactions Supported: false
+14:56:48.853 [pool-1-thread-5] DEBUG org.flywaydb.core.internal.schemahistory.SchemaHistoryFactory -- Schemas: 
+14:56:48.853 [pool-1-thread-5] DEBUG org.flywaydb.core.internal.schemahistory.SchemaHistoryFactory -- Default schema: null
+14:56:48.855 [pool-1-thread-5] WARN org.flywaydb.core.internal.database.base.Database -- Flyway upgrade recommended: H2 2.2.224 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.2.220.
+14:56:48.855 [pool-1-thread-5] DEBUG org.flywaydb.core.internal.callback.SqlScriptCallbackFactory -- Scanning for SQL callbacks ...
+14:56:48.855 [pool-1-thread-5] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+14:56:48.858 [pool-1-thread-5] DEBUG org.flywaydb.core.internal.command.DbValidate -- Validating migrations ...
+14:56:48.860 [pool-1-thread-5] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+14:56:48.863 [pool-1-thread-5] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+14:56:48.863 [pool-1-thread-5] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V4__Fingerprints.sql (filename: V4__Fingerprints.sql)
+14:56:48.863 [pool-1-thread-5] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V1__Create_tables.sql (filename: V1__Create_tables.sql)
+14:56:48.863 [pool-1-thread-5] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V2__Server_discovery.sql (filename: V2__Server_discovery.sql)
+14:56:48.863 [pool-1-thread-5] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V3__Jar_symbols.sql (filename: V3__Jar_symbols.sql)
+14:56:48.864 [pool-1-thread-5] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+14:56:48.864 [pool-1-thread-5] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V4__Fingerprints.sql (filename: V4__Fingerprints.sql)
+14:56:48.864 [pool-1-thread-5] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V1__Create_tables.sql (filename: V1__Create_tables.sql)
+14:56:48.864 [pool-1-thread-5] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V2__Server_discovery.sql (filename: V2__Server_discovery.sql)
+14:56:48.864 [pool-1-thread-5] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V3__Jar_symbols.sql (filename: V3__Jar_symbols.sql)
+14:56:48.869 [pool-1-thread-5] INFO org.flywaydb.core.internal.command.DbValidate -- Successfully validated 4 migrations (execution time 00:00.009s)
+14:56:48.870 [pool-1-thread-5] DEBUG org.flywaydb.core.internal.command.DbSchemas -- Skipping creation of existing schema: "PUBLIC"
+14:56:48.872 [pool-1-thread-5] INFO org.flywaydb.core.internal.command.DbMigrate -- Current version of schema "PUBLIC": 4
+14:56:48.873 [pool-1-thread-5] INFO org.flywaydb.core.internal.command.DbMigrate -- Schema "PUBLIC" is up to date. No migration necessary.
+14:56:48.884 [pool-1-thread-5] DEBUG org.flywaydb.core.FlywayExecutor -- Memory usage: 34 of 100M
+2024.03.20 14:56:48 INFO  skipping build import with status 'Installed'
+2024.03.20 14:56:48 INFO  Attempting to connect to the build server...
+2024.03.20 14:56:48 INFO  Bloop uses /home/mahir/.jabba/jdk/openjdk@1.17.0 defined at /home/mahir/.bloop/bloop.json
+2024.03.20 14:56:48 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /home/mahir/fun/git/16KiB-direct-cache/cache/.metals/bsp.trace.json or /home/mahir/.cache/metals/bsp.trace.json
+2024.03.20 14:56:48 INFO  Attempting to connect to the build server...
+2024.03.20 14:56:48 INFO  Bloop uses /home/mahir/.jabba/jdk/openjdk@1.17.0 defined at /home/mahir/.bloop/bloop.json
+2024.03.20 14:56:48 INFO  Attempting to connect to the build server...
+2024.03.20 14:56:48 INFO  Bloop uses /home/mahir/.jabba/jdk/openjdk@1.17.0 defined at /home/mahir/.bloop/bloop.json
+2024.03.20 14:56:48 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /home/mahir/fun/git/16KiB-direct-cache/cache/project/project/.metals/bsp.trace.json or /home/mahir/.cache/metals/bsp.trace.json
+2024.03.20 14:56:49 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /home/mahir/fun/git/16KiB-direct-cache/cache/project/.metals/bsp.trace.json or /home/mahir/.cache/metals/bsp.trace.json
+2024.03.20 14:56:48 INFO  time: Connected to build server in 0.2s
+2024.03.20 14:56:48 INFO  Connected to Build server: Bloop v1.5.15
+Mar 20, 2024 2:56:50 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
+2024.03.20 14:57:01 INFO  time: indexed workspace in 11s
+2024.03.20 14:57:24 INFO  compiling projectname (5 scala sources)
+2024.03.20 14:57:24 INFO  time: compiled projectname in 0.18s
+2024.03.20 14:57:35 INFO  running '/usr/bin/sbt -Dbloop.export-jar-classifiers=sources bloopInstall'
+2024.03.20 14:57:36 INFO  [info] welcome to sbt 1.6.0 (Oracle Corporation Java 11.0.22)
+2024.03.20 14:57:36 INFO  [info] loading settings for project cache-build-build-build from metals.sbt ...
+2024.03.20 14:57:36 INFO  [info] loading project definition from /home/mahir/fun/git/16KiB-direct-cache/cache/project/project/project
+2024.03.20 14:57:37 INFO  [info] loading settings for project cache-build-build from metals.sbt ...
+2024.03.20 14:57:37 INFO  [info] loading project definition from /home/mahir/fun/git/16KiB-direct-cache/cache/project/project
+2024.03.20 14:57:38 INFO  [success] Generated .bloop/cache-build-build.json
+2024.03.20 14:57:38 INFO  [success] Total time: 1 s, completed 20 Mar 2024, 14:57:38
+2024.03.20 14:57:38 INFO  [info] loading settings for project cache-build from metals.sbt,plugins.sbt ...
+2024.03.20 14:57:38 INFO  [info] loading project definition from /home/mahir/fun/git/16KiB-direct-cache/cache/project
+2024.03.20 14:57:38 INFO  [success] Generated .bloop/cache-build.json
+2024.03.20 14:57:38 INFO  [success] Total time: 0 s, completed 20 Mar 2024, 14:57:38
+2024.03.20 14:57:38 INFO  [info] loading settings for project projectname from build.sbt ...
+2024.03.20 14:57:38 INFO  [info] set current project to projectname (in build file:/home/mahir/fun/git/16KiB-direct-cache/cache/)
+2024.03.20 14:57:38 INFO  [success] Generated .bloop/projectname.json
+2024.03.20 14:57:38 INFO  [success] Generated .bloop/projectname-test.json
+2024.03.20 14:57:38 INFO  [success] Total time: 0 s, completed 20 Mar 2024, 14:57:39
+2024.03.20 14:57:39 INFO  time: ran 'sbt bloopInstall' in 4.32s
+2024.03.20 14:57:39 INFO  Disconnecting from Bloop session...
+2024.03.20 14:57:39 INFO  Shut down connection with build server.
+2024.03.20 14:57:39 INFO  Shut down connection with build server.
+2024.03.20 14:57:39 INFO  Shut down connection with build server.
+2024.03.20 14:57:39 INFO  Attempting to connect to the build server...
+2024.03.20 14:57:39 INFO  Bloop uses /home/mahir/.jabba/jdk/openjdk@1.17.0 defined at /home/mahir/.bloop/bloop.json
+2024.03.20 14:57:39 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /home/mahir/fun/git/16KiB-direct-cache/cache/.metals/bsp.trace.json or /home/mahir/.cache/metals/bsp.trace.json
+2024.03.20 14:57:39 INFO  Attempting to connect to the build server...
+2024.03.20 14:57:39 INFO  Bloop uses /home/mahir/.jabba/jdk/openjdk@1.17.0 defined at /home/mahir/.bloop/bloop.json
+2024.03.20 14:57:39 INFO  Attempting to connect to the build server...
+2024.03.20 14:57:39 INFO  Bloop uses /home/mahir/.jabba/jdk/openjdk@1.17.0 defined at /home/mahir/.bloop/bloop.json
+2024.03.20 14:57:39 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /home/mahir/fun/git/16KiB-direct-cache/cache/project/project/.metals/bsp.trace.json or /home/mahir/.cache/metals/bsp.trace.json
+2024.03.20 14:57:39 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /home/mahir/fun/git/16KiB-direct-cache/cache/project/.metals/bsp.trace.json or /home/mahir/.cache/metals/bsp.trace.json
+2024.03.20 14:57:39 INFO  time: Connected to build server in 33ms
+2024.03.20 14:57:39 INFO  Connected to Build server: Bloop v1.5.15
+2024.03.20 14:57:40 INFO  time: indexed workspace in 0.82s
+2024.03.20 14:57:40 INFO  compiling projectname (5 scala sources)
+2024.03.20 14:57:41 INFO  time: compiled projectname in 1.57s
+2024.03.20 14:58:00 INFO  compiling projectname (5 scala sources)
+2024.03.20 14:58:00 INFO  time: compiled projectname in 0.1s
+2024.03.20 14:58:07 INFO  compiling projectname (5 scala sources)
+2024.03.20 14:58:07 INFO  time: compiled projectname in 0.11s
+2024.03.20 14:58:09 INFO  compiling projectname (5 scala sources)
+2024.03.20 14:58:09 INFO  time: compiled projectname in 0.12s
+2024.03.20 14:58:16 INFO  compiling projectname (5 scala sources)
+2024.03.20 14:58:16 INFO  time: compiled projectname in 59ms
+2024.03.20 14:58:20 INFO  compiling projectname (5 scala sources)
+2024.03.20 14:58:20 INFO  time: compiled projectname in 40ms
+2024.03.20 14:58:22 INFO  compiling projectname (5 scala sources)
+2024.03.20 14:58:22 INFO  time: compiled projectname in 42ms
+2024.03.20 14:58:23 INFO  compiling projectname (5 scala sources)
+2024.03.20 14:58:23 INFO  time: compiled projectname in 52ms
+2024.03.20 14:58:25 INFO  compiling projectname (5 scala sources)
+2024.03.20 14:58:25 INFO  time: compiled projectname in 0.13s
+2024.03.20 14:58:27 INFO  compiling projectname (5 scala sources)
+2024.03.20 14:58:27 INFO  time: compiled projectname in 95ms
+2024.03.20 15:01:23 INFO  compiling projectname (5 scala sources)
+2024.03.20 15:01:23 INFO  time: compiled projectname in 0.16s
+2024.03.20 22:03:18 INFO  compiling projectname (5 scala sources)
+2024.03.20 22:03:18 INFO  time: compiled projectname in 46ms
+2024.03.20 22:03:20 INFO  Shutting down server
+2024.03.20 22:03:20 INFO  shutting down Metals
+2024.03.20 22:03:20 INFO  Shut down connection with build server.
+2024.03.20 22:03:20 INFO  Shut down connection with build server.
+2024.03.20 22:03:20 INFO  Shut down connection with build server.
+2024.03.20 22:03:20 INFO  Exiting server
+2024.03.21 12:21:19 INFO  Started: Metals version 1.2.2 in folders '/home/mahir/fun/git/16KiB-direct-cache/cache' for client Visual Studio Code 1.87.2.
+12:21:19.441 [pool-1-thread-4] INFO org.flywaydb.core.internal.license.VersionPrinter -- Flyway Community Edition 9.22.3 by Redgate
+12:21:19.443 [pool-1-thread-4] INFO org.flywaydb.core.internal.license.VersionPrinter -- See release notes here: https://rd.gt/416ObMi
+12:21:19.443 [pool-1-thread-4] INFO org.flywaydb.core.internal.license.VersionPrinter -- 
+12:21:19.444 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Scanning for classpath resources at 'classpath:db/callback' ...
+12:21:19.444 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Determining location urls for classpath:db/callback using ClassLoader jdk.internal.loader.ClassLoaders$AppClassLoader@5cb0d902 ...
+12:21:19.444 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Unable to resolve location classpath:db/callback.
+12:21:19.444 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Scanning for classpath resources at 'classpath:db/migration' ...
+12:21:19.444 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Determining location urls for classpath:db/migration using ClassLoader jdk.internal.loader.ClassLoaders$AppClassLoader@5cb0d902 ...
+12:21:19.445 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Scanning URL: jar:file:/home/mahir/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scalameta/metals_2.13/1.2.2/metals_2.13-1.2.2.jar!/db/migration
+12:21:19.446 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/
+12:21:19.446 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/V1__Create_tables.sql
+12:21:19.446 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/V2__Server_discovery.sql
+12:21:19.446 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/V3__Jar_symbols.sql
+12:21:19.446 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/V4__Fingerprints.sql
+12:21:19.446 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Scanning for classes at classpath:db/migration
+12:21:19.448 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+12:21:19.448 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.resource.ResourceNameValidator -- Validating V4__Fingerprints.sql
+12:21:19.448 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.resource.ResourceNameValidator -- Validating V1__Create_tables.sql
+12:21:19.448 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.resource.ResourceNameValidator -- Validating V2__Server_discovery.sql
+12:21:19.448 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.resource.ResourceNameValidator -- Validating V3__Jar_symbols.sql
+12:21:19.499 [pool-1-thread-4] INFO org.flywaydb.core.FlywayExecutor -- Database: jdbc:h2:file:/home/mahir/fun/git/16KiB-direct-cache/cache/.metals/metals (H2 2.2)
+12:21:19.500 [pool-1-thread-4] DEBUG org.flywaydb.core.FlywayExecutor -- Driver: H2 JDBC Driver 2.2.224 (2023-09-17)
+12:21:19.500 [pool-1-thread-4] DEBUG org.flywaydb.core.FlywayExecutor -- DDL Transactions Supported: false
+12:21:19.500 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.schemahistory.SchemaHistoryFactory -- Schemas: 
+12:21:19.500 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.schemahistory.SchemaHistoryFactory -- Default schema: null
+12:21:19.503 [pool-1-thread-4] WARN org.flywaydb.core.internal.database.base.Database -- Flyway upgrade recommended: H2 2.2.224 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.2.220.
+12:21:19.503 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.callback.SqlScriptCallbackFactory -- Scanning for SQL callbacks ...
+12:21:19.503 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+12:21:19.506 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.command.DbValidate -- Validating migrations ...
+12:21:19.508 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+12:21:19.512 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+12:21:19.512 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V4__Fingerprints.sql (filename: V4__Fingerprints.sql)
+12:21:19.512 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V1__Create_tables.sql (filename: V1__Create_tables.sql)
+12:21:19.512 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V2__Server_discovery.sql (filename: V2__Server_discovery.sql)
+12:21:19.512 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V3__Jar_symbols.sql (filename: V3__Jar_symbols.sql)
+12:21:19.512 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+12:21:19.512 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V4__Fingerprints.sql (filename: V4__Fingerprints.sql)
+12:21:19.512 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V1__Create_tables.sql (filename: V1__Create_tables.sql)
+12:21:19.512 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V2__Server_discovery.sql (filename: V2__Server_discovery.sql)
+12:21:19.512 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V3__Jar_symbols.sql (filename: V3__Jar_symbols.sql)
+12:21:19.520 [pool-1-thread-4] INFO org.flywaydb.core.internal.command.DbValidate -- Successfully validated 4 migrations (execution time 00:00.013s)
+12:21:19.522 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.command.DbSchemas -- Skipping creation of existing schema: "PUBLIC"
+12:21:19.525 [pool-1-thread-4] INFO org.flywaydb.core.internal.command.DbMigrate -- Current version of schema "PUBLIC": 4
+12:21:19.526 [pool-1-thread-4] INFO org.flywaydb.core.internal.command.DbMigrate -- Schema "PUBLIC" is up to date. No migration necessary.
+12:21:19.533 [pool-1-thread-4] DEBUG org.flywaydb.core.FlywayExecutor -- Memory usage: 45 of 124M
+2024.03.21 12:21:19 INFO  skipping build import with status 'Installed'
+2024.03.21 12:21:19 INFO  Attempting to connect to the build server...
+2024.03.21 12:21:19 INFO  Bloop uses /home/mahir/.jabba/jdk/openjdk@1.17.0 defined at /home/mahir/.bloop/bloop.json
+2024.03.21 12:21:19 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /home/mahir/fun/git/16KiB-direct-cache/cache/.metals/bsp.trace.json or /home/mahir/.cache/metals/bsp.trace.json
+2024.03.21 12:21:19 INFO  Attempting to connect to the build server...
+2024.03.21 12:21:19 INFO  Bloop uses /home/mahir/.jabba/jdk/openjdk@1.17.0 defined at /home/mahir/.bloop/bloop.json
+2024.03.21 12:21:19 INFO  Attempting to connect to the build server...
+2024.03.21 12:21:19 INFO  Bloop uses /home/mahir/.jabba/jdk/openjdk@1.17.0 defined at /home/mahir/.bloop/bloop.json
+2024.03.21 12:21:19 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /home/mahir/fun/git/16KiB-direct-cache/cache/project/project/.metals/bsp.trace.json or /home/mahir/.cache/metals/bsp.trace.json
+2024.03.21 12:21:19 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /home/mahir/fun/git/16KiB-direct-cache/cache/project/.metals/bsp.trace.json or /home/mahir/.cache/metals/bsp.trace.json
+2024.03.21 12:21:19 INFO  time: Connected to build server in 0.19s
+2024.03.21 12:21:19 INFO  Connected to Build server: Bloop v1.5.13
+2024.03.21 12:21:21 INFO  time: indexed workspace in 1.59s
+2024.03.21 12:21:31 INFO  Disconnecting from Bloop session...
+2024.03.21 12:21:33 ERROR timeout: build server 'bloop' during shutdown
+2024.03.21 12:21:33 ERROR timeout: build server 'bloop' during shutdown
+2024.03.21 12:21:33 ERROR timeout: build server 'bloop' during shutdown
+2024.03.21 12:21:33 INFO  Attempting to connect to the build server...
+2024.03.21 12:21:33 INFO  Bloop uses /home/mahir/.jabba/jdk/openjdk@1.17.0 defined at /home/mahir/.bloop/bloop.json
+2024.03.21 12:21:34 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /home/mahir/fun/git/16KiB-direct-cache/cache/.metals/bsp.trace.json or /home/mahir/.cache/metals/bsp.trace.json
+2024.03.21 12:21:34 INFO  Attempting to connect to the build server...
+2024.03.21 12:21:34 INFO  Bloop uses /home/mahir/.jabba/jdk/openjdk@1.17.0 defined at /home/mahir/.bloop/bloop.json
+2024.03.21 12:21:34 INFO  Attempting to connect to the build server...
+2024.03.21 12:21:34 INFO  Bloop uses /home/mahir/.jabba/jdk/openjdk@1.17.0 defined at /home/mahir/.bloop/bloop.json
+2024.03.21 12:21:34 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /home/mahir/fun/git/16KiB-direct-cache/cache/project/project/.metals/bsp.trace.json or /home/mahir/.cache/metals/bsp.trace.json
+2024.03.21 12:21:34 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /home/mahir/fun/git/16KiB-direct-cache/cache/project/.metals/bsp.trace.json or /home/mahir/.cache/metals/bsp.trace.json
+2024.03.21 12:21:34 INFO  time: Connected to build server in 1.25s
+2024.03.21 12:21:34 INFO  Connected to Build server: Bloop v1.5.15
+2024.03.21 12:21:34 INFO  time: indexed workspace in 0.83s
+2024.03.21 12:21:35 INFO  compiling projectname (5 scala sources)
+2024.03.21 12:21:37 INFO  time: compiled projectname in 1.42s
+2024.03.21 12:21:42 INFO  compiling projectname (5 scala sources)
+2024.03.21 12:21:42 WARN  Invalid text document uri received from build server: file:///home/mahir/fun/git/16KiB-direct-cache/cache/hw/spinal/projectname/Controller.scala
+2024.03.21 12:21:42 INFO  time: compiled projectname in 0.11s
+2024.03.21 12:21:42 INFO  compiling projectname (5 scala sources)
+2024.03.21 12:21:42 INFO  time: compiled projectname in 57ms
+2024.03.21 12:42:08 INFO  compiling projectname (5 scala sources)
+2024.03.21 12:42:08 INFO  time: compiled projectname in 0.86s
+2024.03.21 12:53:31 INFO  time: code lens generation in 1.07s
+Mar 21, 2024 1:02:21 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 64
+2024.03.21 13:02:21 INFO  compiling projectname (5 scala sources)
+2024.03.21 13:02:21 INFO  time: compiled projectname in 0.28s
+2024.03.21 13:03:08 INFO  compiling projectname (5 scala sources)
+2024.03.21 13:03:08 INFO  time: compiled projectname in 0.25s
+2024.03.21 13:07:09 INFO  compiling projectname (5 scala sources)
+2024.03.21 13:07:09 INFO  time: compiled projectname in 0.18s
+2024.03.21 13:07:10 INFO  compiling projectname (5 scala sources)
+2024.03.21 13:07:10 INFO  time: compiled projectname in 0.2s
+2024.03.21 13:07:34 INFO  compiling projectname (5 scala sources)
+2024.03.21 13:07:34 INFO  time: compiled projectname in 0.16s
+2024.03.21 13:07:36 INFO  compiling projectname (5 scala sources)
+2024.03.21 13:07:36 INFO  time: compiled projectname in 0.16s
+2024.03.21 13:07:41 INFO  compiling projectname (5 scala sources)
+2024.03.21 13:07:41 INFO  time: compiled projectname in 0.17s
+2024.03.21 13:07:47 INFO  compiling projectname (5 scala sources)
+2024.03.21 13:07:47 INFO  time: compiled projectname in 0.19s
+2024.03.21 13:07:51 INFO  compiling projectname (5 scala sources)
+2024.03.21 13:07:51 INFO  time: compiled projectname in 0.14s
+2024.03.21 13:10:12 INFO  compiling projectname (5 scala sources)
+2024.03.21 13:10:12 INFO  time: compiled projectname in 0.16s
+2024.03.21 13:12:00 INFO  compiling projectname (5 scala sources)
+2024.03.21 13:12:00 INFO  time: compiled projectname in 40ms
+2024.03.21 13:12:05 INFO  compiling projectname (5 scala sources)
+2024.03.21 13:12:05 INFO  time: compiled projectname in 0.16s
+2024.03.21 13:12:18 INFO  compiling projectname (5 scala sources)
+2024.03.21 13:12:18 INFO  time: compiled projectname in 0.12s
+2024.03.21 13:12:24 INFO  compiling projectname (5 scala sources)
+2024.03.21 13:12:24 INFO  time: compiled projectname in 72ms
+Mar 21, 2024 1:12:28 PM scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: A severe compiler error occurred, full details of the error can be found in the error report /home/mahir/fun/git/16KiB-direct-cache/cache/.metals/.reports/metals-full/2024-03-21/r_compiler-error_(projectname)_13-12-28-790.md
+2024.03.21 13:12:30 INFO  compiling projectname (5 scala sources)
+2024.03.21 13:12:30 INFO  time: compiled projectname in 0.15s
+2024.03.21 13:12:35 INFO  compiling projectname (5 scala sources)
+2024.03.21 13:12:35 INFO  time: compiled projectname in 0.14s
+2024.03.21 13:12:44 INFO  compiling projectname (5 scala sources)
+2024.03.21 13:12:44 INFO  time: compiled projectname in 48ms
+2024.03.21 13:12:47 INFO  compiling projectname (5 scala sources)
+2024.03.21 13:12:47 INFO  time: compiled projectname in 0.13s
+2024.03.21 13:12:53 INFO  compiling projectname (5 scala sources)
+2024.03.21 13:12:53 INFO  time: compiled projectname in 37ms
+2024.03.21 13:12:58 INFO  compiling projectname (5 scala sources)
+2024.03.21 13:12:58 INFO  time: compiled projectname in 51ms
+2024.03.21 13:12:59 INFO  compiling projectname (5 scala sources)
+2024.03.21 13:12:59 INFO  time: compiled projectname in 50ms
+2024.03.21 13:13:43 INFO  compiling projectname (5 scala sources)
+2024.03.21 13:13:43 INFO  time: compiled projectname in 0.16s
+2024.03.21 13:13:49 INFO  compiling projectname (5 scala sources)
+2024.03.21 13:13:49 INFO  time: compiled projectname in 0.13s
+2024.03.21 13:13:52 INFO  compiling projectname (5 scala sources)
+2024.03.21 13:13:52 INFO  time: compiled projectname in 38ms
+2024.03.21 13:13:56 INFO  compiling projectname (5 scala sources)
+2024.03.21 13:13:56 INFO  time: compiled projectname in 0.14s
+2024.03.21 13:13:59 ERROR Failed to tokenize input for semantic tokens for /home/mahir/fun/git/16KiB-direct-cache/cache/hw/spinal/projectname/DataCache.scala
+scala.meta.tokenizers.TokenizeException: <input>:11: error: unclosed quoted identifier
+  val rsp = Flow(DataLoadRs`)
+                           ^
+	at scala.meta.internal.tokenizers.Reporter.syntaxError(Reporter.scala:23)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError$(Reporter.scala:23)
+	at scala.meta.internal.tokenizers.Reporter$$anon$1.syntaxError(Reporter.scala:33)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError(Reporter.scala:25)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError$(Reporter.scala:25)
+	at scala.meta.internal.tokenizers.Reporter$$anon$1.syntaxError(Reporter.scala:33)
+	at scala.meta.internal.tokenizers.LegacyScanner.getBackquotedIdent(LegacyScanner.scala:489)
+	at scala.meta.internal.tokenizers.LegacyScanner.fetchToken(LegacyScanner.scala:337)
+	at scala.meta.internal.tokenizers.LegacyScanner.nextToken(LegacyScanner.scala:211)
+	at scala.meta.internal.tokenizers.LegacyScanner.foreach(LegacyScanner.scala:1011)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.uncachedTokenize(ScalametaTokenizer.scala:24)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.$anonfun$tokenize$1(ScalametaTokenizer.scala:17)
+	at scala.collection.concurrent.TrieMap.getOrElseUpdate(TrieMap.scala:962)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.tokenize(ScalametaTokenizer.scala:17)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer$$anon$2.apply(ScalametaTokenizer.scala:332)
+	at scala.meta.tokenizers.Api$XtensionTokenizeDialectInput.tokenize(Api.scala:25)
+	at scala.meta.tokenizers.Api$XtensionTokenizeInputLike.tokenize(Api.scala:14)
+	at scala.meta.internal.metals.SemanticTokensProvider$.getTokens(SemanticTokensProvider.scala:30)
+	at scala.meta.internal.metals.SemanticTokensProvider$.provide(SemanticTokensProvider.scala:89)
+	at scala.meta.internal.metals.Compilers.$anonfun$semanticTokens$3(Compilers.scala:541)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:833)
+
+2024.03.21 13:14:03 INFO  compiling projectname (5 scala sources)
+2024.03.21 13:14:03 INFO  time: compiled projectname in 0.14s
+2024.03.21 13:14:15 INFO  compiling projectname (5 scala sources)
+2024.03.21 13:14:15 INFO  time: compiled projectname in 0.11s
+2024.03.21 13:14:16 INFO  compiling projectname (5 scala sources)
+2024.03.21 13:14:16 INFO  time: compiled projectname in 0.13s
+2024.03.21 13:14:20 INFO  compiling projectname (5 scala sources)
+2024.03.21 13:14:20 INFO  time: compiled projectname in 56ms
+2024.03.21 13:14:23 INFO  compiling projectname (5 scala sources)
+2024.03.21 13:14:23 INFO  time: compiled projectname in 0.12s
+2024.03.21 13:14:26 INFO  compiling projectname (5 scala sources)
+2024.03.21 13:14:26 INFO  time: compiled projectname in 0.12s
+2024.03.21 13:14:34 INFO  compiling projectname (5 scala sources)
+2024.03.21 13:14:34 INFO  time: compiled projectname in 0.13s
+2024.03.21 13:15:14 INFO  compiling projectname (5 scala sources)
+2024.03.21 13:15:14 INFO  time: compiled projectname in 0.12s
+2024.03.21 13:15:17 INFO  compiling projectname (5 scala sources)
+2024.03.21 13:15:17 INFO  time: compiled projectname in 0.11s
+2024.03.21 13:15:19 INFO  compiling projectname (5 scala sources)
+2024.03.21 13:15:19 INFO  time: compiled projectname in 44ms
+2024.03.21 13:15:31 INFO  compiling projectname (5 scala sources)
+2024.03.21 13:15:31 INFO  time: compiled projectname in 53ms
+2024.03.21 13:15:38 INFO  compiling projectname (5 scala sources)
+2024.03.21 13:15:38 INFO  time: compiled projectname in 0.12s
+2024.03.21 13:15:41 INFO  compiling projectname (5 scala sources)
+2024.03.21 13:15:41 INFO  time: compiled projectname in 97ms
+2024.03.21 13:15:45 INFO  compiling projectname (5 scala sources)
+2024.03.21 13:15:45 INFO  time: compiled projectname in 98ms
+2024.03.21 13:15:50 INFO  compiling projectname (5 scala sources)
+2024.03.21 13:15:50 INFO  time: compiled projectname in 0.1s
+2024.03.21 13:16:11 INFO  compiling projectname (5 scala sources)
+2024.03.21 13:16:11 INFO  time: compiled projectname in 0.12s
+2024.03.21 13:16:15 INFO  compiling projectname (5 scala sources)
+2024.03.21 13:16:15 INFO  time: compiled projectname in 0.1s
+2024.03.21 13:16:28 INFO  compiling projectname (5 scala sources)
+2024.03.21 13:16:28 INFO  time: compiled projectname in 97ms
+2024.03.21 13:16:43 INFO  compiling projectname (5 scala sources)
+2024.03.21 13:16:43 INFO  time: compiled projectname in 88ms
+2024.03.21 13:16:50 INFO  compiling projectname (5 scala sources)
+2024.03.21 13:16:50 INFO  time: compiled projectname in 0.11s
+2024.03.21 13:16:55 INFO  compiling projectname (5 scala sources)
+2024.03.21 13:16:55 INFO  time: compiled projectname in 99ms
+Mar 21, 2024 1:17:12 PM scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: A severe compiler error occurred, full details of the error can be found in the error report /home/mahir/fun/git/16KiB-direct-cache/cache/.metals/.reports/metals-full/2024-03-21/r_compiler-error_(projectname)_13-17-12-531.md
+2024.03.21 13:17:15 INFO  compiling projectname (5 scala sources)
+2024.03.21 13:17:15 INFO  time: compiled projectname in 92ms
+2024.03.21 13:17:31 INFO  compiling projectname (5 scala sources)
+2024.03.21 13:17:31 INFO  time: compiled projectname in 34ms
+2024.03.21 13:17:38 INFO  compiling projectname (5 scala sources)
+2024.03.21 13:17:38 INFO  time: compiled projectname in 0.11s
+Mar 21, 2024 1:22:42 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1923
+2024.03.21 13:24:39 INFO  compiling projectname (5 scala sources)
+2024.03.21 13:24:39 INFO  time: compiled projectname in 96ms
+2024.03.21 13:24:46 INFO  compiling projectname (5 scala sources)
+2024.03.21 13:24:46 INFO  time: compiled projectname in 56ms
+2024.03.21 13:24:53 INFO  compiling projectname (5 scala sources)
+2024.03.21 13:24:53 INFO  time: compiled projectname in 96ms
+2024.03.21 13:24:55 INFO  compiling projectname (5 scala sources)
+2024.03.21 13:24:55 INFO  time: compiled projectname in 0.1s
+2024.03.21 13:24:57 INFO  compiling projectname (5 scala sources)
+2024.03.21 13:24:57 INFO  time: compiled projectname in 0.1s
+2024.03.21 13:26:37 INFO  compiling projectname (5 scala sources)
+2024.03.21 13:26:37 INFO  time: compiled projectname in 40ms
+2024.03.21 13:26:41 INFO  compiling projectname (5 scala sources)
+2024.03.21 13:26:41 INFO  time: compiled projectname in 0.12s
+2024.03.21 13:26:42 INFO  compiling projectname (5 scala sources)
+2024.03.21 13:26:42 INFO  time: compiled projectname in 93ms
+2024.03.21 13:26:49 INFO  compiling projectname (5 scala sources)
+2024.03.21 13:26:49 INFO  time: compiled projectname in 96ms
+2024.03.21 13:29:29 INFO  compiling projectname (5 scala sources)
+2024.03.21 13:29:29 INFO  time: compiled projectname in 0.19s
+2024.03.21 13:29:39 INFO  compiling projectname (5 scala sources)
+2024.03.21 13:29:39 INFO  time: compiled projectname in 44ms
+2024.03.21 13:30:02 INFO  compiling projectname (5 scala sources)
+2024.03.21 13:30:02 INFO  time: compiled projectname in 34ms
+2024.03.21 13:30:11 INFO  compiling projectname (5 scala sources)
+2024.03.21 13:30:11 INFO  time: compiled projectname in 0.1s
+2024.03.21 13:30:13 INFO  compiling projectname (5 scala sources)
+2024.03.21 13:30:13 INFO  time: compiled projectname in 0.11s
+Mar 21, 2024 1:30:13 PM scala.meta.internal.mtags.SymbolIndexBucket addMtagsSourceFile
+WARNING: Error indexing /home/mahir/fun/git/16KiB-direct-cache/cache/hw/spinal/projectname/Controller.scala
+java.nio.file.NoSuchFileException: /home/mahir/fun/git/16KiB-direct-cache/cache/hw/spinal/projectname/Controller.scala
+	at java.base/sun.nio.fs.UnixException.translateToIOException(UnixException.java:92)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:106)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:111)
+	at java.base/sun.nio.fs.UnixFileSystemProvider.newByteChannel(UnixFileSystemProvider.java:219)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:380)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:432)
+	at java.base/java.nio.file.Files.readAllBytes(Files.java:3288)
+	at scala.meta.internal.io.PlatformFileIO$.slurp(PlatformFileIO.scala:45)
+	at scala.meta.internal.io.FileIO$.slurp(FileIO.scala:24)
+	at scala.meta.internal.mtags.ScalametaCommonEnrichments$XtensionAbsolutePath.toInput(ScalametaCommonEnrichments.scala:425)
+	at scala.meta.internal.mtags.Mtags.index(Mtags.scala:67)
+	at scala.meta.internal.mtags.Mtags.allSymbols(Mtags.scala:21)
+	at scala.meta.internal.mtags.SymbolIndexBucket.allSymbols(SymbolIndexBucket.scala:281)
+	at scala.meta.internal.mtags.SymbolIndexBucket.addMtagsSourceFile(SymbolIndexBucket.scala:292)
+	at scala.meta.internal.mtags.SymbolIndexBucket.$anonfun$query0$7(SymbolIndexBucket.scala:223)
+	at scala.meta.internal.mtags.SymbolIndexBucket.$anonfun$query0$7$adapted(SymbolIndexBucket.scala:218)
+	at scala.collection.IterableOnceOps.foreach(IterableOnce.scala:576)
+	at scala.collection.IterableOnceOps.foreach$(IterableOnce.scala:574)
+	at scala.collection.AbstractIterable.foreach(Iterable.scala:933)
+	at scala.collection.IterableOps$WithFilter.foreach(Iterable.scala:903)
+	at scala.meta.internal.mtags.SymbolIndexBucket.query0(SymbolIndexBucket.scala:218)
+	at scala.meta.internal.mtags.SymbolIndexBucket.query(SymbolIndexBucket.scala:180)
+	at scala.meta.internal.mtags.OnDemandSymbolIndex.$anonfun$findSymbolDefinition$1(OnDemandSymbolIndex.scala:141)
+	at scala.collection.immutable.List.flatMap(List.scala:293)
+	at scala.meta.internal.mtags.OnDemandSymbolIndex.findSymbolDefinition(OnDemandSymbolIndex.scala:141)
+	at scala.meta.internal.mtags.OnDemandSymbolIndex.definition(OnDemandSymbolIndex.scala:48)
+	at scala.meta.internal.metals.Docstrings.indexSymbol(Docstrings.scala:118)
+	at scala.meta.internal.metals.Docstrings.documentation(Docstrings.scala:44)
+	at scala.meta.internal.metals.MetalsSymbolSearch.documentation(MetalsSymbolSearch.scala:43)
+	at scala.meta.internal.pc.MetalsGlobal.symbolDocumentation(MetalsGlobal.scala:234)
+	at scala.meta.internal.pc.CompletionItemResolver.handleSymbol(CompletionItemResolver.scala:31)
+	at scala.meta.internal.pc.CompletionItemResolver.resolve(CompletionItemResolver.scala:24)
+	at scala.meta.internal.pc.ScalaPresentationCompiler.$anonfun$completionItemResolve$1(ScalaPresentationCompiler.scala:300)
+	at scala.meta.internal.pc.CompilerAccess.withSharedCompiler(CompilerAccess.scala:156)
+	at scala.meta.internal.pc.ScalaPresentationCompiler.completionItemResolve(ScalaPresentationCompiler.scala:299)
+	at scala.meta.internal.metals.Compilers.$anonfun$completionItemResolve$2(Compilers.scala:279)
+	at scala.Option.map(Option.scala:242)
+	at scala.meta.internal.metals.Compilers.$anonfun$completionItemResolve$1(Compilers.scala:278)
+	at scala.Option.flatMap(Option.scala:283)
+	at scala.meta.internal.metals.Compilers.completionItemResolve(Compilers.scala:277)
+	at scala.meta.internal.metals.MetalsLspService.$anonfun$completionItemResolve$1(MetalsLspService.scala:1638)
+	at scala.meta.internal.metals.CancelTokens$.future(CancelTokens.scala:38)
+	at scala.meta.internal.metals.MetalsLspService.completionItemResolve(MetalsLspService.scala:1636)
+	at scala.meta.internal.metals.WorkspaceLspService.$anonfun$completionItemResolve$1(WorkspaceLspService.scala:450)
+	at scala.Option.map(Option.scala:242)
+	at scala.meta.internal.metals.WorkspaceLspService.completionItemResolve(WorkspaceLspService.scala:450)
+	at scala.meta.metals.lsp.DelegatingScalaService.completionItemResolve(DelegatingScalaService.scala:138)
+	at jdk.internal.reflect.GeneratedMethodAccessor13.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:65)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.request(GenericEndpoint.java:120)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleRequest(RemoteEndpoint.java:261)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:190)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:194)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:94)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:113)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+Mar 21, 2024 1:30:13 PM scala.meta.internal.mtags.SymbolIndexBucket addMtagsSourceFile
+WARNING: Error indexing /home/mahir/fun/git/16KiB-direct-cache/cache/hw/spinal/projectname/Controller.scala
+java.nio.file.NoSuchFileException: /home/mahir/fun/git/16KiB-direct-cache/cache/hw/spinal/projectname/Controller.scala
+	at java.base/sun.nio.fs.UnixException.translateToIOException(UnixException.java:92)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:106)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:111)
+	at java.base/sun.nio.fs.UnixFileSystemProvider.newByteChannel(UnixFileSystemProvider.java:219)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:380)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:432)
+	at java.base/java.nio.file.Files.readAllBytes(Files.java:3288)
+	at scala.meta.internal.io.PlatformFileIO$.slurp(PlatformFileIO.scala:45)
+	at scala.meta.internal.io.FileIO$.slurp(FileIO.scala:24)
+	at scala.meta.internal.mtags.ScalametaCommonEnrichments$XtensionAbsolutePath.toInput(ScalametaCommonEnrichments.scala:425)
+	at scala.meta.internal.mtags.Mtags.index(Mtags.scala:67)
+	at scala.meta.internal.mtags.Mtags.allSymbols(Mtags.scala:21)
+	at scala.meta.internal.mtags.SymbolIndexBucket.allSymbols(SymbolIndexBucket.scala:281)
+	at scala.meta.internal.mtags.SymbolIndexBucket.addMtagsSourceFile(SymbolIndexBucket.scala:292)
+	at scala.meta.internal.mtags.SymbolIndexBucket.addMtagsSourceFile(SymbolIndexBucket.scala:303)
+	at scala.meta.internal.mtags.SymbolIndexBucket.$anonfun$query0$7(SymbolIndexBucket.scala:223)
+	at scala.meta.internal.mtags.SymbolIndexBucket.$anonfun$query0$7$adapted(SymbolIndexBucket.scala:218)
+	at scala.collection.IterableOnceOps.foreach(IterableOnce.scala:576)
+	at scala.collection.IterableOnceOps.foreach$(IterableOnce.scala:574)
+	at scala.collection.AbstractIterable.foreach(Iterable.scala:933)
+	at scala.collection.IterableOps$WithFilter.foreach(Iterable.scala:903)
+	at scala.meta.internal.mtags.SymbolIndexBucket.query0(SymbolIndexBucket.scala:218)
+	at scala.meta.internal.mtags.SymbolIndexBucket.query(SymbolIndexBucket.scala:180)
+	at scala.meta.internal.mtags.OnDemandSymbolIndex.$anonfun$findSymbolDefinition$1(OnDemandSymbolIndex.scala:141)
+	at scala.collection.immutable.List.flatMap(List.scala:293)
+	at scala.meta.internal.mtags.OnDemandSymbolIndex.findSymbolDefinition(OnDemandSymbolIndex.scala:141)
+	at scala.meta.internal.mtags.OnDemandSymbolIndex.definition(OnDemandSymbolIndex.scala:48)
+	at scala.meta.internal.metals.Docstrings.indexSymbol(Docstrings.scala:118)
+	at scala.meta.internal.metals.Docstrings.documentation(Docstrings.scala:44)
+	at scala.meta.internal.metals.MetalsSymbolSearch.documentation(MetalsSymbolSearch.scala:43)
+	at scala.meta.internal.pc.MetalsGlobal.symbolDocumentation(MetalsGlobal.scala:234)
+	at scala.meta.internal.pc.CompletionItemResolver.handleSymbol(CompletionItemResolver.scala:31)
+	at scala.meta.internal.pc.CompletionItemResolver.resolve(CompletionItemResolver.scala:24)
+	at scala.meta.internal.pc.ScalaPresentationCompiler.$anonfun$completionItemResolve$1(ScalaPresentationCompiler.scala:300)
+	at scala.meta.internal.pc.CompilerAccess.withSharedCompiler(CompilerAccess.scala:156)
+	at scala.meta.internal.pc.ScalaPresentationCompiler.completionItemResolve(ScalaPresentationCompiler.scala:299)
+	at scala.meta.internal.metals.Compilers.$anonfun$completionItemResolve$2(Compilers.scala:279)
+	at scala.Option.map(Option.scala:242)
+	at scala.meta.internal.metals.Compilers.$anonfun$completionItemResolve$1(Compilers.scala:278)
+	at scala.Option.flatMap(Option.scala:283)
+	at scala.meta.internal.metals.Compilers.completionItemResolve(Compilers.scala:277)
+	at scala.meta.internal.metals.MetalsLspService.$anonfun$completionItemResolve$1(MetalsLspService.scala:1638)
+	at scala.meta.internal.metals.CancelTokens$.future(CancelTokens.scala:38)
+	at scala.meta.internal.metals.MetalsLspService.completionItemResolve(MetalsLspService.scala:1636)
+	at scala.meta.internal.metals.WorkspaceLspService.$anonfun$completionItemResolve$1(WorkspaceLspService.scala:450)
+	at scala.Option.map(Option.scala:242)
+	at scala.meta.internal.metals.WorkspaceLspService.completionItemResolve(WorkspaceLspService.scala:450)
+	at scala.meta.metals.lsp.DelegatingScalaService.completionItemResolve(DelegatingScalaService.scala:138)
+	at jdk.internal.reflect.GeneratedMethodAccessor13.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:65)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.request(GenericEndpoint.java:120)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleRequest(RemoteEndpoint.java:261)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:190)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:194)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:94)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:113)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+2024.03.21 13:30:16 INFO  compiling projectname (5 scala sources)
+2024.03.21 13:30:16 INFO  time: compiled projectname in 87ms
+2024.03.21 13:30:20 INFO  compiling projectname (5 scala sources)
+2024.03.21 13:30:20 INFO  time: compiled projectname in 0.1s
+2024.03.21 13:30:55 INFO  compiling projectname (5 scala sources)
+2024.03.21 13:30:55 INFO  time: compiled projectname in 45ms
+2024.03.21 13:31:04 INFO  compiling projectname (5 scala sources)
+2024.03.21 13:31:04 INFO  time: compiled projectname in 0.11s
+2024.03.21 13:32:11 INFO  compiling projectname (5 scala sources)
+2024.03.21 13:32:11 INFO  time: compiled projectname in 87ms
+2024.03.21 13:32:14 INFO  compiling projectname (5 scala sources)
+2024.03.21 13:32:14 INFO  time: compiled projectname in 0.11s
+2024.03.21 13:32:16 INFO  compiling projectname (5 scala sources)
+2024.03.21 13:32:16 INFO  time: compiled projectname in 0.1s
+2024.03.21 13:33:06 INFO  running '/usr/bin/sbt -Dbloop.export-jar-classifiers=sources bloopInstall'
+2024.03.21 13:33:07 INFO  [info] welcome to sbt 1.6.0 (Oracle Corporation Java 11.0.22)
+2024.03.21 13:33:07 INFO  [info] loading settings for project cache-build-build-build from metals.sbt ...
+2024.03.21 13:33:07 INFO  [info] loading project definition from /home/mahir/fun/git/16KiB-direct-cache/cache/project/project/project
+2024.03.21 13:33:08 INFO  [info] loading settings for project cache-build-build from metals.sbt ...
+2024.03.21 13:33:08 INFO  [info] loading project definition from /home/mahir/fun/git/16KiB-direct-cache/cache/project/project
+2024.03.21 13:33:10 INFO  [success] Generated .bloop/cache-build-build.json
+2024.03.21 13:33:10 INFO  [success] Total time: 1 s, completed 21 Mar 2024, 13:33:10
+2024.03.21 13:33:10 INFO  [info] loading settings for project cache-build from metals.sbt,plugins.sbt ...
+2024.03.21 13:33:10 INFO  [info] loading project definition from /home/mahir/fun/git/16KiB-direct-cache/cache/project
+2024.03.21 13:33:10 INFO  [success] Generated .bloop/cache-build.json
+2024.03.21 13:33:10 INFO  [success] Total time: 0 s, completed 21 Mar 2024, 13:33:10
+2024.03.21 13:33:10 INFO  [info] loading settings for project projectname from build.sbt ...
+2024.03.21 13:33:10 INFO  [info] set current project to projectname (in build file:/home/mahir/fun/git/16KiB-direct-cache/cache/)
+2024.03.21 13:33:10 INFO  [success] Generated .bloop/projectname.json
+2024.03.21 13:33:10 INFO  [success] Generated .bloop/projectname-test.json
+2024.03.21 13:33:10 INFO  [success] Total time: 0 s, completed 21 Mar 2024, 13:33:10
+2024.03.21 13:33:11 INFO  time: ran 'sbt bloopInstall' in 4.52s
+2024.03.21 13:33:11 INFO  Disconnecting from Bloop session...
+2024.03.21 13:33:11 INFO  Shut down connection with build server.
+2024.03.21 13:33:11 INFO  Shut down connection with build server.
+2024.03.21 13:33:11 INFO  Shut down connection with build server.
+2024.03.21 13:33:11 INFO  Attempting to connect to the build server...
+2024.03.21 13:33:11 INFO  Bloop uses /home/mahir/.jabba/jdk/openjdk@1.17.0 defined at /home/mahir/.bloop/bloop.json
+2024.03.21 13:33:11 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /home/mahir/fun/git/16KiB-direct-cache/cache/.metals/bsp.trace.json or /home/mahir/.cache/metals/bsp.trace.json
+2024.03.21 13:33:11 INFO  Attempting to connect to the build server...
+2024.03.21 13:33:11 INFO  Bloop uses /home/mahir/.jabba/jdk/openjdk@1.17.0 defined at /home/mahir/.bloop/bloop.json
+2024.03.21 13:33:11 INFO  Attempting to connect to the build server...
+2024.03.21 13:33:11 INFO  Bloop uses /home/mahir/.jabba/jdk/openjdk@1.17.0 defined at /home/mahir/.bloop/bloop.json
+2024.03.21 13:33:11 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /home/mahir/fun/git/16KiB-direct-cache/cache/project/project/.metals/bsp.trace.json or /home/mahir/.cache/metals/bsp.trace.json
+2024.03.21 13:33:11 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /home/mahir/fun/git/16KiB-direct-cache/cache/project/.metals/bsp.trace.json or /home/mahir/.cache/metals/bsp.trace.json
+2024.03.21 13:33:11 INFO  time: Connected to build server in 30ms
+2024.03.21 13:33:11 INFO  Connected to Build server: Bloop v1.5.15
+2024.03.21 13:33:12 INFO  time: indexed workspace in 0.76s
+2024.03.21 13:33:12 WARN  no build target for: /home/mahir/fun/git/16KiB-direct-cache/NaxDataCache.scala
+2024.03.21 13:33:12 INFO  compiling projectname (5 scala sources)
+2024.03.21 13:33:13 INFO  time: compiled projectname in 1.49s
+2024.03.21 13:33:13 INFO  time: code lens generation in 1.39s
+2024.03.21 13:33:18 INFO  compiling projectname (5 scala sources)
+2024.03.21 13:33:18 INFO  time: compiled projectname in 0.12s
+Mar 21, 2024 1:33:21 PM scala.meta.internal.pc.CompilerAccess retryWithCleanCompiler
+INFO: compiler crashed due to an error in the Scala compiler, retrying with new compiler instance.
+Mar 21, 2024 1:33:21 PM scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: A severe compiler error occurred, full details of the error can be found in the error report /home/mahir/fun/git/16KiB-direct-cache/cache/.metals/.reports/metals-full/2024-03-21/r_compiler-error_(projectname)_13-33-21-063.md
+Mar 21, 2024 1:33:21 PM scala.meta.internal.pc.CompilerAccess retryWithCleanCompiler
+INFO: compiler crashed due to an error in the Scala compiler, retrying with new compiler instance.
+Mar 21, 2024 1:33:21 PM scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: A severe compiler error occurred, full details of the error can be found in the error report /home/mahir/fun/git/16KiB-direct-cache/cache/.metals/.reports/metals-full/2024-03-21/r_compiler-error_(projectname)_13-33-21-686.md
+2024.03.21 13:33:25 INFO  compiling projectname (5 scala sources)
+2024.03.21 13:33:25 INFO  time: compiled projectname in 0.11s
+2024.03.21 13:33:30 INFO  compiling projectname (5 scala sources)
+2024.03.21 13:33:30 INFO  time: compiled projectname in 0.12s
+2024.03.21 13:33:33 INFO  compiling projectname (5 scala sources)
+2024.03.21 13:33:33 INFO  time: compiled projectname in 0.12s
+2024.03.21 13:34:28 INFO  compiling projectname (5 scala sources)
+2024.03.21 13:34:28 INFO  time: compiled projectname in 0.1s
+2024.03.21 13:34:34 INFO  compiling projectname (5 scala sources)
+2024.03.21 13:34:34 INFO  time: compiled projectname in 0.1s
+2024.03.21 13:35:15 INFO  compiling projectname (5 scala sources)
+2024.03.21 13:35:15 INFO  time: compiled projectname in 0.1s
+2024.03.21 13:35:20 INFO  compiling projectname (5 scala sources)
+2024.03.21 13:35:20 INFO  time: compiled projectname in 0.1s
+2024.03.21 13:35:43 INFO  compiling projectname (5 scala sources)
+2024.03.21 13:35:43 INFO  time: compiled projectname in 0.1s
+2024.03.21 13:35:46 INFO  compiling projectname (5 scala sources)
+2024.03.21 13:35:46 INFO  time: compiled projectname in 82ms
+2024.03.21 13:36:09 INFO  compiling projectname (5 scala sources)
+2024.03.21 13:36:09 INFO  time: compiled projectname in 97ms
+2024.03.21 13:36:15 INFO  compiling projectname (5 scala sources)
+2024.03.21 13:36:15 INFO  time: compiled projectname in 89ms
+2024.03.21 13:36:18 INFO  compiling projectname (5 scala sources)
+2024.03.21 13:36:18 INFO  time: compiled projectname in 95ms
+2024.03.21 13:36:27 INFO  compiling projectname (5 scala sources)
+2024.03.21 13:36:27 INFO  time: compiled projectname in 35ms
+2024.03.21 13:36:30 INFO  compiling projectname (5 scala sources)
+2024.03.21 13:36:30 INFO  time: compiled projectname in 94ms
+2024.03.21 13:46:45 INFO  compiling projectname (5 scala sources)
+2024.03.21 13:46:45 INFO  time: compiled projectname in 99ms
+2024.03.21 13:46:48 INFO  compiling projectname (5 scala sources)
+2024.03.21 13:46:48 INFO  time: compiled projectname in 33ms
+2024.03.21 13:46:51 INFO  compiling projectname (5 scala sources)
+2024.03.21 13:46:51 INFO  time: compiled projectname in 0.12s
+2024.03.21 13:46:57 INFO  compiling projectname (5 scala sources)
+2024.03.21 13:46:57 INFO  time: compiled projectname in 0.13s
+2024.03.21 13:46:58 INFO  compiling projectname (5 scala sources)
+2024.03.21 13:46:58 INFO  time: compiled projectname in 0.11s
+2024.03.21 13:47:02 INFO  compiling projectname (5 scala sources)
+2024.03.21 13:47:02 INFO  time: compiled projectname in 0.1s
+2024.03.21 13:47:06 INFO  compiling projectname (5 scala sources)
+2024.03.21 13:47:06 INFO  time: compiled projectname in 94ms
+2024.03.21 13:47:08 INFO  compiling projectname (5 scala sources)
+2024.03.21 13:47:08 INFO  time: compiled projectname in 82ms
+2024.03.21 13:47:10 INFO  compiling projectname (5 scala sources)
+2024.03.21 13:47:10 INFO  time: compiled projectname in 91ms
+2024.03.21 13:47:13 INFO  compiling projectname (5 scala sources)
+2024.03.21 13:47:13 INFO  time: compiled projectname in 81ms
+2024.03.21 13:47:15 INFO  compiling projectname (5 scala sources)
+2024.03.21 13:47:15 INFO  time: compiled projectname in 98ms
+2024.03.21 13:47:19 INFO  compiling projectname (5 scala sources)
+2024.03.21 13:47:19 INFO  time: compiled projectname in 91ms
+2024.03.21 13:47:23 INFO  compiling projectname (5 scala sources)
+2024.03.21 13:47:23 INFO  time: compiled projectname in 86ms
+2024.03.21 13:47:41 INFO  compiling projectname (5 scala sources)
+2024.03.21 13:47:41 INFO  time: compiled projectname in 79ms
+2024.03.21 13:47:48 INFO  compiling projectname (5 scala sources)
+2024.03.21 13:47:48 INFO  time: compiled projectname in 98ms
+2024.03.21 13:47:52 INFO  compiling projectname (5 scala sources)
+2024.03.21 13:47:52 INFO  time: compiled projectname in 0.1s
+2024.03.21 13:53:43 INFO  compiling projectname (5 scala sources)
+2024.03.21 13:53:43 INFO  time: compiled projectname in 85ms
+2024.03.21 13:53:49 INFO  compiling projectname (5 scala sources)
+2024.03.21 13:53:49 INFO  time: compiled projectname in 28ms
+2024.03.21 13:53:56 INFO  compiling projectname (5 scala sources)
+2024.03.21 13:53:56 INFO  time: compiled projectname in 85ms
+2024.03.21 13:54:01 INFO  compiling projectname (5 scala sources)
+2024.03.21 13:54:01 INFO  time: compiled projectname in 93ms
+2024.03.22 08:55:22 INFO  Started: Metals version 1.2.2 in folders '/home/mahir/fun/git/16KiB-direct-cache/cache' for client Visual Studio Code 1.87.2.
+08:55:23.294 [pool-1-thread-1] INFO org.flywaydb.core.internal.license.VersionPrinter -- Flyway Community Edition 9.22.3 by Redgate
+08:55:23.296 [pool-1-thread-1] INFO org.flywaydb.core.internal.license.VersionPrinter -- See release notes here: https://rd.gt/416ObMi
+08:55:23.296 [pool-1-thread-1] INFO org.flywaydb.core.internal.license.VersionPrinter -- 
+08:55:23.297 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Scanning for classpath resources at 'classpath:db/callback' ...
+08:55:23.298 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Determining location urls for classpath:db/callback using ClassLoader jdk.internal.loader.ClassLoaders$AppClassLoader@5cb0d902 ...
+08:55:23.298 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Unable to resolve location classpath:db/callback.
+08:55:23.298 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Scanning for classpath resources at 'classpath:db/migration' ...
+08:55:23.298 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Determining location urls for classpath:db/migration using ClassLoader jdk.internal.loader.ClassLoaders$AppClassLoader@5cb0d902 ...
+08:55:23.298 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Scanning URL: jar:file:/home/mahir/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scalameta/metals_2.13/1.2.2/metals_2.13-1.2.2.jar!/db/migration
+08:55:23.299 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/
+08:55:23.299 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/V1__Create_tables.sql
+08:55:23.299 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/V2__Server_discovery.sql
+08:55:23.299 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/V3__Jar_symbols.sql
+08:55:23.299 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/V4__Fingerprints.sql
+08:55:23.299 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Scanning for classes at classpath:db/migration
+08:55:23.301 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+08:55:23.301 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.resource.ResourceNameValidator -- Validating V4__Fingerprints.sql
+08:55:23.301 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.resource.ResourceNameValidator -- Validating V1__Create_tables.sql
+08:55:23.301 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.resource.ResourceNameValidator -- Validating V2__Server_discovery.sql
+08:55:23.301 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.resource.ResourceNameValidator -- Validating V3__Jar_symbols.sql
+08:55:23.353 [pool-1-thread-1] INFO org.flywaydb.core.FlywayExecutor -- Database: jdbc:h2:file:/home/mahir/fun/git/16KiB-direct-cache/cache/.metals/metals (H2 2.2)
+08:55:23.353 [pool-1-thread-1] DEBUG org.flywaydb.core.FlywayExecutor -- Driver: H2 JDBC Driver 2.2.224 (2023-09-17)
+08:55:23.353 [pool-1-thread-1] DEBUG org.flywaydb.core.FlywayExecutor -- DDL Transactions Supported: false
+08:55:23.354 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.schemahistory.SchemaHistoryFactory -- Schemas: 
+08:55:23.354 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.schemahistory.SchemaHistoryFactory -- Default schema: null
+08:55:23.356 [pool-1-thread-1] WARN org.flywaydb.core.internal.database.base.Database -- Flyway upgrade recommended: H2 2.2.224 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.2.220.
+08:55:23.356 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.callback.SqlScriptCallbackFactory -- Scanning for SQL callbacks ...
+08:55:23.356 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+08:55:23.359 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.command.DbValidate -- Validating migrations ...
+08:55:23.361 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+08:55:23.365 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+08:55:23.365 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V4__Fingerprints.sql (filename: V4__Fingerprints.sql)
+08:55:23.365 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V1__Create_tables.sql (filename: V1__Create_tables.sql)
+08:55:23.365 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V2__Server_discovery.sql (filename: V2__Server_discovery.sql)
+08:55:23.365 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V3__Jar_symbols.sql (filename: V3__Jar_symbols.sql)
+08:55:23.365 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+08:55:23.365 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V4__Fingerprints.sql (filename: V4__Fingerprints.sql)
+08:55:23.365 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V1__Create_tables.sql (filename: V1__Create_tables.sql)
+08:55:23.365 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V2__Server_discovery.sql (filename: V2__Server_discovery.sql)
+08:55:23.365 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V3__Jar_symbols.sql (filename: V3__Jar_symbols.sql)
+08:55:23.371 [pool-1-thread-1] INFO org.flywaydb.core.internal.command.DbValidate -- Successfully validated 4 migrations (execution time 00:00.010s)
+08:55:23.372 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.command.DbSchemas -- Skipping creation of existing schema: "PUBLIC"
+08:55:23.374 [pool-1-thread-1] INFO org.flywaydb.core.internal.command.DbMigrate -- Current version of schema "PUBLIC": 4
+08:55:23.377 [pool-1-thread-1] INFO org.flywaydb.core.internal.command.DbMigrate -- Schema "PUBLIC" is up to date. No migration necessary.
+08:55:23.384 [pool-1-thread-1] DEBUG org.flywaydb.core.FlywayExecutor -- Memory usage: 34 of 100M
+2024.03.22 08:55:23 INFO  skipping build import with status 'Installed'
+2024.03.22 08:55:23 INFO  Attempting to connect to the build server...
+2024.03.22 08:55:23 INFO  Bloop uses /home/mahir/.jabba/jdk/openjdk@1.17.0 defined at /home/mahir/.bloop/bloop.json
+2024.03.22 08:55:25 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /home/mahir/fun/git/16KiB-direct-cache/cache/.metals/bsp.trace.json or /home/mahir/.cache/metals/bsp.trace.json
+2024.03.22 08:55:25 INFO  Attempting to connect to the build server...
+2024.03.22 08:55:25 INFO  Bloop uses /home/mahir/.jabba/jdk/openjdk@1.17.0 defined at /home/mahir/.bloop/bloop.json
+2024.03.22 08:55:25 INFO  Attempting to connect to the build server...
+2024.03.22 08:55:25 INFO  Bloop uses /home/mahir/.jabba/jdk/openjdk@1.17.0 defined at /home/mahir/.bloop/bloop.json
+2024.03.22 08:55:25 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /home/mahir/fun/git/16KiB-direct-cache/cache/project/project/.metals/bsp.trace.json or /home/mahir/.cache/metals/bsp.trace.json
+2024.03.22 08:55:25 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /home/mahir/fun/git/16KiB-direct-cache/cache/project/.metals/bsp.trace.json or /home/mahir/.cache/metals/bsp.trace.json
+2024.03.22 08:55:25 INFO  time: Connected to build server in 2.04s
+2024.03.22 08:55:25 INFO  Connected to Build server: Bloop v1.5.15
+2024.03.22 08:55:27 INFO  no build target found for /home/mahir/fun/git/16KiB-direct-cache/cache/hw/spinal/projectname/DataCache.scala. Using presentation compiler with project's scala-library version: 3.3.1
+2024.03.22 08:55:29 INFO  time: indexed workspace in 1.36s
+2024.03.22 08:55:29 WARN  no build target for: /home/mahir/fun/git/16KiB-direct-cache/NaxDataCache.scala
+2024.03.22 08:55:29 INFO  compiling projectname (5 scala sources)
+2024.03.22 08:55:31 INFO  time: compiled projectname in 1.59s
+2024.03.22 08:55:31 INFO  compiling projectname (5 scala sources)
+2024.03.22 08:55:31 INFO  time: compiled projectname in 0.48s
+2024.03.22 08:55:33 INFO  time: code lens generation in 1.68s
+2024.03.22 08:55:33 INFO  time: code lens generation in 2.56s
+2024.03.22 08:55:33 INFO  time: code lens generation in 2.56s
+2024.03.22 08:56:03 INFO  compiling projectname (5 scala sources)
+2024.03.22 08:56:03 INFO  time: compiled projectname in 0.27s
+2024.03.22 08:56:08 INFO  compiling projectname (5 scala sources)
+2024.03.22 08:56:08 INFO  time: compiled projectname in 74ms
+2024.03.22 08:56:14 INFO  compiling projectname (5 scala sources)
+2024.03.22 08:56:14 INFO  time: compiled projectname in 0.22s
+2024.03.22 08:56:16 INFO  compiling projectname (5 scala sources)
+2024.03.22 08:56:16 INFO  time: compiled projectname in 0.21s
+2024.03.22 08:56:22 INFO  compiling projectname (5 scala sources)
+2024.03.22 08:56:22 INFO  time: compiled projectname in 0.2s
+2024.03.22 08:56:25 INFO  compiling projectname (5 scala sources)
+2024.03.22 08:56:25 INFO  time: compiled projectname in 0.18s
+2024.03.22 08:56:27 INFO  compiling projectname (5 scala sources)
+2024.03.22 08:56:27 INFO  time: compiled projectname in 0.14s
+2024.03.22 08:56:42 INFO  compiling projectname (5 scala sources)
+2024.03.22 08:56:42 INFO  time: compiled projectname in 0.18s
+2024.03.22 08:56:46 INFO  compiling projectname (5 scala sources)
+2024.03.22 08:56:46 INFO  time: compiled projectname in 0.14s
+Mar 22, 2024 8:56:55 AM scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: A severe compiler error occurred, full details of the error can be found in the error report /home/mahir/fun/git/16KiB-direct-cache/cache/.metals/.reports/metals-full/2024-03-22/r_compiler-error_(projectname)_08-56-55-370.md
+2024.03.22 08:56:58 INFO  compiling projectname (5 scala sources)
+2024.03.22 08:56:58 INFO  time: compiled projectname in 0.17s
+2024.03.22 08:57:14 INFO  compiling projectname (5 scala sources)
+2024.03.22 08:57:14 INFO  time: compiled projectname in 0.14s
+2024.03.22 08:57:20 INFO  compiling projectname (5 scala sources)
+2024.03.22 08:57:20 INFO  time: compiled projectname in 74ms
+2024.03.22 08:57:23 INFO  compiling projectname (5 scala sources)
+2024.03.22 08:57:23 INFO  time: compiled projectname in 54ms
+2024.03.22 08:57:36 INFO  compiling projectname (5 scala sources)
+2024.03.22 08:57:36 INFO  time: compiled projectname in 0.14s
+2024.03.22 08:57:49 INFO  compiling projectname (5 scala sources)
+2024.03.22 08:57:49 INFO  time: compiled projectname in 65ms
+2024.03.22 08:57:59 INFO  compiling projectname (5 scala sources)
+2024.03.22 08:57:59 INFO  time: compiled projectname in 0.12s
+2024.03.22 08:58:11 INFO  compiling projectname (5 scala sources)
+2024.03.22 08:58:11 INFO  time: compiled projectname in 62ms
+2024.03.22 08:58:13 INFO  compiling projectname (5 scala sources)
+2024.03.22 08:58:13 INFO  time: compiled projectname in 0.13s
+2024.03.22 09:20:50 WARN  no build target for: /home/mahir/fun/git/16KiB-direct-cache/NaxDataCache.scala
+2024.03.22 09:20:53 WARN  no build target for: /home/mahir/fun/git/16KiB-direct-cache/NaxDataCache.scala
+2024.03.22 09:20:58 WARN  no build target for: /home/mahir/fun/git/16KiB-direct-cache/NaxDataCache.scala
+2024.03.22 09:21:01 WARN  no build target for: /home/mahir/fun/git/16KiB-direct-cache/NaxDataCache.scala
+2024.03.22 09:21:42 WARN  no build target for: /home/mahir/fun/git/16KiB-direct-cache/NaxDataCache.scala
+2024.03.22 09:21:47 WARN  no build target for: /home/mahir/fun/git/16KiB-direct-cache/NaxDataCache.scala
+2024.03.22 09:21:50 WARN  no build target for: /home/mahir/fun/git/16KiB-direct-cache/NaxDataCache.scala
+2024.03.22 09:22:15 INFO  compiling projectname (5 scala sources)
+2024.03.22 09:22:15 INFO  time: compiled projectname in 0.13s
+2024.03.22 09:22:17 INFO  compiling projectname (5 scala sources)
+2024.03.22 09:22:17 INFO  time: compiled projectname in 0.12s
+2024.03.22 09:22:20 INFO  compiling projectname (5 scala sources)
+2024.03.22 09:22:20 INFO  time: compiled projectname in 0.12s
+2024.03.22 09:23:08 WARN  no build target for: /home/mahir/fun/git/16KiB-direct-cache/NaxDataCache.scala
+2024.03.22 09:23:37 ERROR Failed to tokenize input for semantic tokens for /home/mahir/fun/git/16KiB-direct-cache/cache/hw/spinal/projectname/DataCache.scala
+scala.meta.tokenizers.TokenizeException: <input>:116: error: Invalid literal number
+  val byteOffset = io.address(1 downto 0j
+                                       ^
+	at scala.meta.internal.tokenizers.Reporter.syntaxError(Reporter.scala:23)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError$(Reporter.scala:23)
+	at scala.meta.internal.tokenizers.Reporter$$anon$1.syntaxError(Reporter.scala:33)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError(Reporter.scala:25)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError$(Reporter.scala:25)
+	at scala.meta.internal.tokenizers.Reporter$$anon$1.syntaxError(Reporter.scala:33)
+	at scala.meta.internal.tokenizers.LegacyScanner.checkNoLetter(LegacyScanner.scala:820)
+	at scala.meta.internal.tokenizers.LegacyScanner.restOfUncertainToken$1(LegacyScanner.scala:864)
+	at scala.meta.internal.tokenizers.LegacyScanner.getNumber(LegacyScanner.scala:872)
+	at scala.meta.internal.tokenizers.LegacyScanner.fetchZero$1(LegacyScanner.scala:330)
+	at scala.meta.internal.tokenizers.LegacyScanner.fetchToken(LegacyScanner.scala:332)
+	at scala.meta.internal.tokenizers.LegacyScanner.nextToken(LegacyScanner.scala:211)
+	at scala.meta.internal.tokenizers.LegacyScanner.foreach(LegacyScanner.scala:1011)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.uncachedTokenize(ScalametaTokenizer.scala:24)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.$anonfun$tokenize$1(ScalametaTokenizer.scala:17)
+	at scala.collection.concurrent.TrieMap.getOrElseUpdate(TrieMap.scala:962)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.tokenize(ScalametaTokenizer.scala:17)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer$$anon$2.apply(ScalametaTokenizer.scala:332)
+	at scala.meta.tokenizers.Api$XtensionTokenizeDialectInput.tokenize(Api.scala:25)
+	at scala.meta.tokenizers.Api$XtensionTokenizeInputLike.tokenize(Api.scala:14)
+	at scala.meta.internal.metals.SemanticTokensProvider$.getTokens(SemanticTokensProvider.scala:30)
+	at scala.meta.internal.metals.SemanticTokensProvider$.provide(SemanticTokensProvider.scala:89)
+	at scala.meta.internal.metals.Compilers.$anonfun$semanticTokens$3(Compilers.scala:541)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:833)
+
+2024.03.22 09:23:38 INFO  compiling projectname (5 scala sources)
+2024.03.22 09:23:38 INFO  time: compiled projectname in 42ms
+2024.03.22 09:23:38 ERROR Failed to tokenize input for semantic tokens for /home/mahir/fun/git/16KiB-direct-cache/cache/hw/spinal/projectname/DataCache.scala
+scala.meta.tokenizers.TokenizeException: <input>:116: error: Invalid literal number
+  val byteOffset = io.address(1 downto 0j
+                                       ^
+	at scala.meta.internal.tokenizers.Reporter.syntaxError(Reporter.scala:23)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError$(Reporter.scala:23)
+	at scala.meta.internal.tokenizers.Reporter$$anon$1.syntaxError(Reporter.scala:33)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError(Reporter.scala:25)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError$(Reporter.scala:25)
+	at scala.meta.internal.tokenizers.Reporter$$anon$1.syntaxError(Reporter.scala:33)
+	at scala.meta.internal.tokenizers.LegacyScanner.checkNoLetter(LegacyScanner.scala:820)
+	at scala.meta.internal.tokenizers.LegacyScanner.restOfUncertainToken$1(LegacyScanner.scala:864)
+	at scala.meta.internal.tokenizers.LegacyScanner.getNumber(LegacyScanner.scala:872)
+	at scala.meta.internal.tokenizers.LegacyScanner.fetchZero$1(LegacyScanner.scala:330)
+	at scala.meta.internal.tokenizers.LegacyScanner.fetchToken(LegacyScanner.scala:332)
+	at scala.meta.internal.tokenizers.LegacyScanner.nextToken(LegacyScanner.scala:211)
+	at scala.meta.internal.tokenizers.LegacyScanner.foreach(LegacyScanner.scala:1011)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.uncachedTokenize(ScalametaTokenizer.scala:24)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.$anonfun$tokenize$1(ScalametaTokenizer.scala:17)
+	at scala.collection.concurrent.TrieMap.getOrElseUpdate(TrieMap.scala:962)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.tokenize(ScalametaTokenizer.scala:17)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer$$anon$2.apply(ScalametaTokenizer.scala:332)
+	at scala.meta.tokenizers.Api$XtensionTokenizeDialectInput.tokenize(Api.scala:25)
+	at scala.meta.tokenizers.Api$XtensionTokenizeInputLike.tokenize(Api.scala:14)
+	at scala.meta.internal.metals.SemanticTokensProvider$.getTokens(SemanticTokensProvider.scala:30)
+	at scala.meta.internal.metals.SemanticTokensProvider$.provide(SemanticTokensProvider.scala:89)
+	at scala.meta.internal.metals.Compilers.$anonfun$semanticTokens$3(Compilers.scala:541)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:833)
+
+2024.03.22 09:23:40 INFO  compiling projectname (5 scala sources)
+2024.03.22 09:23:40 INFO  time: compiled projectname in 0.12s
+2024.03.22 09:23:42 INFO  compiling projectname (5 scala sources)
+2024.03.22 09:23:42 INFO  time: compiled projectname in 0.13s
+2024.03.22 09:23:43 INFO  compiling projectname (5 scala sources)
+2024.03.22 09:23:43 INFO  time: compiled projectname in 0.11s
+2024.03.22 09:23:46 INFO  compiling projectname (5 scala sources)
+2024.03.22 09:23:46 INFO  time: compiled projectname in 0.11s
+2024.03.22 09:23:48 INFO  compiling projectname (5 scala sources)
+2024.03.22 09:23:48 INFO  time: compiled projectname in 0.12s
+2024.03.22 09:23:55 INFO  compiling projectname (5 scala sources)
+2024.03.22 09:23:55 INFO  time: compiled projectname in 0.14s
+2024.03.22 09:23:56 INFO  compiling projectname (5 scala sources)
+2024.03.22 09:23:56 INFO  time: compiled projectname in 0.13s
+2024.03.22 09:23:58 INFO  compiling projectname (5 scala sources)
+2024.03.22 09:23:58 INFO  time: compiled projectname in 0.12s
+2024.03.22 09:24:09 INFO  compiling projectname (5 scala sources)
+2024.03.22 09:24:09 INFO  time: compiled projectname in 0.13s
+2024.03.22 09:24:26 WARN  no build target for: /home/mahir/fun/git/16KiB-direct-cache/NaxDataCache.scala
+2024.03.22 09:24:35 WARN  no build target for: /home/mahir/fun/git/16KiB-direct-cache/NaxDataCache.scala
+2024.03.22 09:25:04 INFO  compiling projectname (5 scala sources)
+2024.03.22 09:25:04 INFO  time: compiled projectname in 0.13s
+Mar 22, 2024 9:31:06 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1300
+2024.03.22 09:34:15 INFO  compiling projectname (5 scala sources)
+2024.03.22 09:34:15 INFO  time: compiled projectname in 0.11s
+2024.03.22 09:34:17 INFO  compiling projectname (5 scala sources)
+2024.03.22 09:34:17 INFO  time: compiled projectname in 0.12s

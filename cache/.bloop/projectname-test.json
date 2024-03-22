@@ -2,20 +2,20 @@
     "version": "1.4.0",
     "project": {
         "name": "projectname-test",
-        "directory": "/home/mahir/git/spinalhdl/cache-labs/direct-cache/16KiB-direct-cache/cache",
-        "workspaceDir": "/home/mahir/git/spinalhdl/cache-labs/direct-cache/16KiB-direct-cache/cache",
+        "directory": "/home/mahir/fun/git/16KiB-direct-cache/cache",
+        "workspaceDir": "/home/mahir/fun/git/16KiB-direct-cache/cache",
         "sources": [
-            "/home/mahir/git/spinalhdl/cache-labs/direct-cache/16KiB-direct-cache/cache/src/test/scala",
-            "/home/mahir/git/spinalhdl/cache-labs/direct-cache/16KiB-direct-cache/cache/src/test/scala-2.12",
-            "/home/mahir/git/spinalhdl/cache-labs/direct-cache/16KiB-direct-cache/cache/src/test/scala-2",
-            "/home/mahir/git/spinalhdl/cache-labs/direct-cache/16KiB-direct-cache/cache/src/test/java",
-            "/home/mahir/git/spinalhdl/cache-labs/direct-cache/16KiB-direct-cache/cache/target/scala-2.12/src_managed/test"
+            "/home/mahir/fun/git/16KiB-direct-cache/cache/src/test/scala",
+            "/home/mahir/fun/git/16KiB-direct-cache/cache/src/test/scala-2.12",
+            "/home/mahir/fun/git/16KiB-direct-cache/cache/src/test/scala-2",
+            "/home/mahir/fun/git/16KiB-direct-cache/cache/src/test/java",
+            "/home/mahir/fun/git/16KiB-direct-cache/cache/target/scala-2.12/src_managed/test"
         ],
         "dependencies": [
             "projectname"
         ],
         "classpath": [
-            "/home/mahir/git/spinalhdl/cache-labs/direct-cache/16KiB-direct-cache/cache/.bloop/projectname/scala-2.12/classes",
+            "/home/mahir/fun/git/16KiB-direct-cache/cache/.bloop/projectname/scala-2.12/classes",
             "/home/mahir/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.12.18/scala-library-2.12.18.jar",
             "/home/mahir/.cache/coursier/v1/https/repo1.maven.org/maven2/com/github/spinalhdl/spinalhdl-core_2.12/1.10.1/spinalhdl-core_2.12-1.10.1.jar",
             "/home/mahir/.cache/coursier/v1/https/repo1.maven.org/maven2/com/github/spinalhdl/spinalhdl-lib_2.12/1.10.1/spinalhdl-lib_2.12-1.10.1.jar",
@@ -36,11 +36,11 @@
             "/home/mahir/.cache/coursier/v1/https/repo1.maven.org/maven2/net/java/dev/jna/jna/5.12.1/jna-5.12.1.jar",
             "/home/mahir/.cache/coursier/v1/https/repo1.maven.org/maven2/net/java/dev/jna/jna-platform/5.12.1/jna-platform-5.12.1.jar"
         ],
-        "out": "/home/mahir/git/spinalhdl/cache-labs/direct-cache/16KiB-direct-cache/cache/.bloop/projectname",
-        "classesDir": "/home/mahir/git/spinalhdl/cache-labs/direct-cache/16KiB-direct-cache/cache/.bloop/projectname/scala-2.12/test-classes",
+        "out": "/home/mahir/fun/git/16KiB-direct-cache/cache/.bloop/projectname",
+        "classesDir": "/home/mahir/fun/git/16KiB-direct-cache/cache/.bloop/projectname/scala-2.12/test-classes",
         "resources": [
-            "/home/mahir/git/spinalhdl/cache-labs/direct-cache/16KiB-direct-cache/cache/src/test/resources",
-            "/home/mahir/git/spinalhdl/cache-labs/direct-cache/16KiB-direct-cache/cache/target/scala-2.12/resource_managed/test"
+            "/home/mahir/fun/git/16KiB-direct-cache/cache/src/test/resources",
+            "/home/mahir/fun/git/16KiB-direct-cache/cache/target/scala-2.12/resource_managed/test"
         ],
         "scala": {
             "organization": "org.scala-lang",
@@ -117,9 +117,9 @@
         "platform": {
             "name": "jvm",
             "config": {
-                "home": "/usr/lib/jvm/java-17-openjdk-amd64",
+                "home": "/usr/lib/jvm/java-11-openjdk",
                 "options": [
-                    "-Duser.dir=/home/mahir/git/spinalhdl/cache-labs/direct-cache/16KiB-direct-cache/cache"
+                    "-Duser.dir=/home/mahir/fun/git/16KiB-direct-cache/cache"
                 ]
             },
             "mainClass": [

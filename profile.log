@@ -1,0 +1,646 @@
+FUNCTION  scala#CountCurlies()
+    Defined: /usr/share/nvim/runtime/indent/scala.vim:56
+Called 8 times
+Total time:   0.000128
+ Self time:   0.000034
+
+count  total (s)   self (s)
+    8   0.000126   0.000032   return scala#CountBrackets(a:line, '{', '}')
+
+FUNCTION  scala#LineCompletesIfElse()
+    Defined: /usr/share/nvim/runtime/indent/scala.vim:207
+Called 8 times
+Total time:   0.000340
+ Self time:   0.000340
+
+count  total (s)   self (s)
+    8              0.000034   if a:line =~ '^\s*\%(\<if\>\|\%(}\s*\)\?\<else\>\)'
+                                return 0
+    8              0.000003   endif
+    8              0.000271   let result = search('^\%(\s*\<if\>\s*(.*).*\n\|\s*\<if\>\s*(.*)\s*\n.*\n\)\%(\s*\<else\>\s*\<if\>\s*(.*)\s*\n.*\n\)*\%(\s*\<else\>\s*\n\|\s*\<else\>[^{]*\n\)\?\%' . a:lnum . 'l', 'Wbn')
+    8              0.000012   if result != 0 && scala#GetLine(prevnonblank(a:lnum - 1)) !~ '{\s*$'
+                                return result
+    8              0.000002   endif
+    8              0.000004   return 0
+
+FUNCTION  scala#CountParens()
+    Defined: /usr/share/nvim/runtime/indent/scala.vim:52
+Called 8 times
+Total time:   0.000116
+ Self time:   0.000029
+
+count  total (s)   self (s)
+    8   0.000114   0.000027   return scala#CountBrackets(a:line, '(', ')')
+
+FUNCTION  scala#CountBrackets()
+    Defined: /usr/share/nvim/runtime/indent/scala.vim:45
+Called 32 times
+Total time:   0.000410
+ Self time:   0.000410
+
+count  total (s)   self (s)
+   32              0.000093   let line = substitute(a:line, '"\(.\|\\"\)\{-}"', '', 'g')
+   32              0.000133   let open = substitute(line, '[^' . a:openBracket . ']', '', 'g')
+   32              0.000117   let close = substitute(line, '[^' . a:closedBracket . ']', '', 'g')
+   32              0.000051   return strlen(open) - strlen(close)
+
+FUNCTION  scala#LineIsAClosingXML()
+    Defined: /usr/share/nvim/runtime/indent/scala.vim:68
+Called 4 times
+Total time:   0.000016
+ Self time:   0.000016
+
+count  total (s)   self (s)
+    4              0.000009   if a:line =~ '^\s*</\w'
+                                return 1
+    4              0.000001   else
+    4              0.000002     return 0
+                              endif
+
+FUNCTION  scala#GetLine()
+    Defined: /usr/share/nvim/runtime/indent/scala.vim:39
+Called 16 times
+Total time:   0.000210
+ Self time:   0.000210
+
+count  total (s)   self (s)
+   16              0.000114   let line = substitute(getline(a:lnum), '//.*$', '', '')
+   16              0.000067   let line = substitute(line, '"\(.\|\\"\)\{-}"', '""', 'g')
+   16              0.000016   return line
+
+FUNCTION  scala#Testhelper()
+    Defined: /usr/share/nvim/runtime/indent/scala.vim:231
+Called 8 times
+Total time:   0.001462
+ Self time:   0.000220
+
+count  total (s)   self (s)
+    8   0.000143   0.000037   let bracketCount = scala#CountBrackets(a:line, a:openBracket, a:closedBracket)
+                              " There are more '}' braces than '{' on this line so it may be completing the function definition
+    8              0.000006   if bracketCount < 0
+                                let [matchedLNum, matchedColNum] = scala#GetLineAndColumnThatMatchesBracket(a:openBracket, a:closedBracket)
+                                if matchedLNum == a:lnum
+                                  return -1
+                                endif
+                                let matchedLine = scala#GetLine(matchedLNum)
+                                if ! scala#MatchesIncompleteDefValr(matchedLine)
+                                  let bracketLine = substitute(substitute(matchedLine, '\%' . matchedColNum . 'c.*$', '', ''), '[^{}()]', '', 'g')
+                                  if bracketLine =~ '}$'
+                                    return scala#Testhelper(matchedLNum, matchedLine, '{', '}', a:iteration + 1)
+                                  elseif bracketLine =~ ')$'
+                                    return scala#Testhelper(matchedLNum, matchedLine, '(', ')', a:iteration + 1)
+                                  else
+                                    let prevCodeLNum = scala#GetPrevCodeLine(matchedLNum)
+                                    if scala#MatchesIncompleteDefValr(scala#GetLine(prevCodeLNum))
+                                      return prevCodeLNum
+                                    else
+                                      return -1
+                                    endif
+                                  endif
+                                else
+                                  " return indent value instead
+                                  return matchedLNum
+                                endif
+                              " There's an equal number of '{' and '}' on this line so it may be a single line function definition
+    8              0.000005   elseif bracketCount == 0
+    8              0.000005     if a:iteration == 0
+    4   0.000040   0.000024       let otherBracketType = scala#InvertBracketType(a:openBracket, a:closedBracket)
+    4              0.000016       return scala#Testhelper(a:lnum, a:line, otherBracketType[0], otherBracketType[1], a:iteration + 1)
+    4              0.000001     else
+    4   0.000028   0.000019       let prevCodeLNum = scala#GetPrevCodeLine(a:lnum)
+    4   0.000058   0.000014       let prevCodeLine = scala#GetLine(prevCodeLNum)
+    4   0.000129   0.000025       if scala#MatchesIncompleteDefValr(prevCodeLine) && prevCodeLine !~ '{\s*$'
+                                    return prevCodeLNum
+    4              0.000001       else
+    4   0.000214   0.000021         let possibleIfElse = scala#LineCompletesIfElse(a:lnum, a:line)
+    4              0.000003         if possibleIfElse != 0
+                                      let defValrLine = prevnonblank(possibleIfElse - 1)
+                                      let possibleDefValr = scala#GetLine(defValrLine)
+                                      if scala#MatchesIncompleteDefValr(possibleDefValr) && possibleDefValr =~ '^.*=\s*$'
+                                        return possibleDefValr
+                                      else
+                                        return -1
+                                      endif
+    4              0.000001         else
+    4              0.000002           return -1
+                                    endif
+                                  endif
+                                endif
+                              else
+                                return -1
+                              endif
+
+FUNCTION  GetScalaIndent()
+    Defined: /usr/share/nvim/runtime/indent/scala.vim:371
+Called 4 times
+Total time:   0.002921
+ Self time:   0.001331
+
+count  total (s)   self (s)
+                              " Find a non-blank line above the current line.
+    4              0.000036   let prevlnum = prevnonblank(v:lnum - 1)
+                            
+                              " Hit the start of the file, use zero indent.
+    4              0.000008   if prevlnum == 0
+                                return 0
+    4              0.000005   endif
+                            
+    4              0.000011   let ind = indent(prevlnum)
+    4              0.000007   let originalIndentValue = ind
+    4   0.000117   0.000031   let prevline = scala#GetLine(prevlnum)
+    4              0.000006   let curlnum = v:lnum
+    4   0.000074   0.000025   let curline = scala#GetLine(curlnum)
+    4              0.000013   if get(g:, 'scala_scaladoc_indent', 0)
+                                let star_indent = 2
+    4              0.000003   else
+    4              0.000005     let star_indent = 1
+    4              0.000002   end
+                            
+    4              0.000022   if prevline =~ '^\s*/\*\*'
+                                if prevline =~ '\*/\s*$'
+                                  return ind
+                                else
+                                  return ind + star_indent
+                                endif
+    4              0.000002   endif
+                            
+    4              0.000018   if curline =~ '^\s*\*'
+                                return cindent(curlnum)
+    4              0.000002   endif
+                            
+                              " If this line starts with a { then make it indent the same as the previous line
+    4              0.000012   if curline =~ '^\s*{'
+                                call scala#ConditionalConfirm("1")
+                                " Unless, of course, the previous one is a { as well
+                                if prevline !~ '^\s*{'
+                                  call scala#ConditionalConfirm("2")
+                                  return indent(prevlnum)
+                                endif
+    4              0.000002   endif
+                            
+                              " '.' continuations
+    4              0.000013   if curline =~ '^\s*\.'
+                                if prevline =~ '^\s*\.'
+                                  return ind
+                                else
+                                  return ind + shiftwidth()
+                                endif
+    4              0.000002   endif
+                            
+                              " Indent html literals
+    4              0.000029   if prevline !~ '/>\s*$' && prevline =~ '^\s*<[a-zA-Z][^>]*>\s*$'
+                                call scala#ConditionalConfirm("3")
+                                return ind + shiftwidth()
+    4              0.000002   endif
+                            
+                              " assumes curly braces around try-block
+    4              0.000013   if curline =~ '^\s*}\s*\<catch\>'
+                                return ind - shiftwidth()
+    4              0.000021   elseif curline =~ '^\s*\<catch\>'
+                                return ind
+    4              0.000001   endif
+                            
+                              " Add a shiftwidth()' after lines that start a block
+                              " If 'if', 'for' or 'while' end with ), this is a one-line block
+                              " If 'val', 'var', 'def' end with =, this is a one-line block
+    4              0.000186   if (prevline =~ '^\s*\<\%(\%(}\?\s*else\s\+\)\?if\|for\|while\)\>.*[)=]\s*$' && scala#NumberOfBraceGroups(prevline) <= 1) || prevline =~ '^\s*' . s:defMatcher . '.*=\s*$' || prevline =~ '^\s*' . s:valMatcher . '.*[=]\s*$' || prevline =~ '^\s*\%(}\s*\)\?\<else\>\s*$' || prevline =~ '=\s*$'
+                                call scala#ConditionalConfirm("4")
+                                let ind = ind + shiftwidth()
+    4              0.000018   elseif prevline =~ '^\s*\<\%(}\?\s*else\s\+\)\?if\>' && curline =~ '^\s*}\?\s*\<else\>'
+                                return ind
+    4              0.000001   endif
+                            
+    4              0.000006   let lineCompletedBrackets = 0
+    4   0.000100   0.000024   let bracketCount = scala#CountBrackets(prevline, '{', '}')
+    4              0.000015   if bracketCount > 0 || prevline =~ '.*{\s*$'
+                                call scala#ConditionalConfirm("5b")
+                                let ind = ind + shiftwidth()
+    4              0.000004   elseif bracketCount < 0
+                                call scala#ConditionalConfirm("6b")
+                                " if the closing brace actually completes the braces entirely, then we
+                                " have to indent to line that started the whole thing
+                                let completeLine = scala#LineCompletesBrackets('{', '}')
+                                if completeLine != -1
+                                  call scala#ConditionalConfirm("8b")
+                                  let prevCompleteLine = scala#GetLine(prevnonblank(completeLine - 1))
+                                  " However, what actually started this part looks like it was a function
+                                  " definition, so we need to indent to that line instead.  This is
+                                  " actually pretty weak at the moment.
+                                  if prevCompleteLine =~ '=\s*$'
+                                    call scala#ConditionalConfirm("9b")
+                                    let ind = indent(prevnonblank(completeLine - 1))
+                                  else
+                                    call scala#ConditionalConfirm("10b")
+                                    let ind = indent(completeLine)
+                                  endif
+                                else
+                                  let lineCompletedBrackets = 1
+                                endif
+    4              0.000001   endif
+                            
+    4              0.000004   if ind == originalIndentValue
+    4   0.000066   0.000018     let bracketCount = scala#CountBrackets(prevline, '(', ')')
+    4              0.000010     if bracketCount > 0 || prevline =~ '.*(\s*$'
+                                  call scala#ConditionalConfirm("5a")
+                                  let ind = ind + shiftwidth()
+    4              0.000003     elseif bracketCount < 0
+                                  call scala#ConditionalConfirm("6a")
+                                  " if the closing brace actually completes the braces entirely, then we
+                                  " have to indent to line that started the whole thing
+                                  let completeLine = scala#LineCompletesBrackets('(', ')')
+                                  if completeLine != -1 && prevline !~ '^.*{\s*$'
+                                    call scala#ConditionalConfirm("8a")
+                                    let prevCompleteLine = scala#GetLine(prevnonblank(completeLine - 1))
+                                    " However, what actually started this part looks like it was a function
+                                    " definition, so we need to indent to that line instead.  This is
+                                    " actually pretty weak at the moment.
+                                    if prevCompleteLine =~ '=\s*$'
+                                      call scala#ConditionalConfirm("9a")
+                                      let ind = indent(prevnonblank(completeLine - 1))
+                                    else
+                                      call scala#ConditionalConfirm("10a")
+                                      let ind = indent(completeLine)
+                                    endif
+                                  else
+                                    " This is the only part that's different from from the '{', '}' one below
+                                    " Yup... some refactoring is necessary at some point.
+                                    let ind = ind + (bracketCount * shiftwidth())
+                                    let lineCompletedBrackets = 1
+                                  endif
+    4              0.000001     endif
+    4              0.000001   endif
+                            
+    4              0.000025   if curline =~ '^\s*}\?\s*\<else\>\%(\s\+\<if\>\s*(.*)\)\?\s*{\?\s*$' && ! scala#LineIsCompleteIf(prevline) && prevline !~ '^.*}\s*$'
+                                let ind = ind - shiftwidth()
+    4              0.000001   endif
+                            
+                              " Subtract a shiftwidth()' on '}' or html
+    4   0.000084   0.000015   let curCurlyCount = scala#CountCurlies(curline)
+    4              0.000003   if curCurlyCount < 0
+                                call scala#ConditionalConfirm("14a")
+                                let matchline = scala#CurlyMatcher()
+                                return indent(matchline)
+    4              0.000014   elseif curline =~ '^\s*</[a-zA-Z][^>]*>'
+                                call scala#ConditionalConfirm("14c")
+                                return ind - shiftwidth()
+    4              0.000001   endif
+                            
+    4   0.000075   0.000015   let prevParenCount = scala#CountParens(prevline)
+    4              0.000012   if prevline =~ '^\s*\<for\>.*$' && prevParenCount > 0
+                                call scala#ConditionalConfirm("15")
+                                let ind = indent(prevlnum) + 5
+    4              0.000001   endif
+                            
+    4   0.000072   0.000014   let prevCurlyCount = scala#CountCurlies(prevline)
+    4              0.000022   if prevCurlyCount == 0 && prevline =~ '^.*\%(=>\|⇒\)\s*$' && prevline !~ '^\s*this\s*:.*\%(=>\|⇒\)\s*$' && curline !~ '^\s*\<case\>'
+                                call scala#ConditionalConfirm("16")
+                                let ind = ind + shiftwidth()
+    4              0.000001   endif
+                            
+    4              0.000012   if ind == originalIndentValue && curline =~ '^\s*\<case\>'
+                                call scala#ConditionalConfirm("17")
+                                let parentCase = scala#IsParentCase()
+                                if parentCase != -1
+                                  call scala#ConditionalConfirm("17a")
+                                  return indent(parentCase)
+                                endif
+    4              0.000001   endif
+                            
+    4              0.000013   if prevline =~ '^\s*\*/' || prevline =~ '*/\s*$'
+                                call scala#ConditionalConfirm("18")
+                                let ind = ind - star_indent
+    4              0.000001   endif
+                            
+    4   0.000037   0.000018   if scala#LineEndsInIncomplete(prevline)
+                                call scala#ConditionalConfirm("19")
+                                return ind
+    4              0.000001   endif
+                            
+    4   0.000030   0.000014   if scala#LineIsAClosingXML(prevline)
+                                if scala#LineCompletesXML(prevlnum, prevline)
+                                  call scala#ConditionalConfirm("20a")
+                                  return ind - shiftwidth()
+                                else
+                                  call scala#ConditionalConfirm("20b")
+                                  return ind
+                                endif
+    4              0.000001   endif
+                            
+    4              0.000003   if ind == originalIndentValue
+                                "let indentMultiplier = scala#LineCompletesDefValr(prevlnum, prevline)
+                                "if indentMultiplier != 0
+                                "  call scala#ConditionalConfirm("19a")
+                                "  let ind = ind - (indentMultiplier * shiftwidth())
+    4   0.000876   0.000017     let defValrLine = scala#Test(prevlnum, prevline, '{', '}')
+    4              0.000003     if defValrLine != -1
+                                  call scala#ConditionalConfirm("21a")
+                                  let ind = indent(defValrLine)
+    4              0.000003     elseif lineCompletedBrackets == 0
+    4   0.000024   0.000017       call scala#ConditionalConfirm("21b")
+    4   0.000054   0.000023       if scala#GetLine(prevnonblank(prevlnum - 1)) =~ '^.*\<else\>\s*\%(//.*\)\?$'
+                                    call scala#ConditionalConfirm("21c")
+                                    let ind = ind - shiftwidth()
+    4   0.000161   0.000014       elseif scala#LineCompletesIfElse(prevlnum, prevline)
+                                    call scala#ConditionalConfirm("21d")
+                                    let ind = ind - shiftwidth()
+    4   0.000072   0.000016       elseif scala#CountParens(curline) < 0 && curline =~ '^\s*)' && scala#GetLine(scala#GetLineThatMatchesBracket('(', ')')) =~ '.*(\s*$'
+                                    " Handles situations that look like this:
+                                    "
+                                    "   val a = func(
+                                    "     10
+                                    "   )
+                                    "
+                                    " or
+                                    "
+                                    "   val a = func(
+                                    "     10
+                                    "   ).somethingHere()
+                                    call scala#ConditionalConfirm("21e")
+                                    let ind = ind - shiftwidth()
+    4              0.000001       endif
+    4              0.000001     endif
+    4              0.000001   endif
+                            
+    4   0.000021   0.000014   call scala#ConditionalConfirm("returning " . ind)
+                            
+    4              0.000002   return ind
+
+FUNCTION  scala#GetPrevCodeLine()
+    Defined: /usr/share/nvim/runtime/indent/scala.vim:218
+Called 4 times
+Total time:   0.000009
+ Self time:   0.000009
+
+count  total (s)   self (s)
+                              " This needs to skip comment lines
+    4              0.000006   return prevnonblank(a:lnum - 1)
+
+FUNCTION  scala#MatchesIncompleteDefValr()
+    Defined: /usr/share/nvim/runtime/indent/scala.vim:189
+Called 4 times
+Total time:   0.000104
+ Self time:   0.000104
+
+count  total (s)   self (s)
+    4              0.000091   if a:line =~ '^\s*\%(' . s:defMatcher . '\|' . s:valMatcher . '\).*[=({]\s*$'
+                                return 1
+    4              0.000002   else
+    4              0.000003     return 0
+                              endif
+
+FUNCTION  scala#InvertBracketType()
+    Defined: /usr/share/nvim/runtime/indent/scala.vim:223
+Called 4 times
+Total time:   0.000016
+ Self time:   0.000016
+
+count  total (s)   self (s)
+    4              0.000005   if a:openBracket == '('
+                                return [ '{', '}' ]
+    4              0.000001   else
+    4              0.000005     return [ '(', ')' ]
+                              endif
+
+FUNCTION  <SNR>19_Remove_Matches()
+    Defined: /usr/share/nvim/runtime/plugin/matchparen.vim:197
+Called 109 times
+Total time:   0.000944
+ Self time:   0.000944
+
+count  total (s)   self (s)
+  109              0.000398   if exists('w:paren_hl_on') && w:paren_hl_on
+    8              0.000023     silent! call matchdelete(3)
+    8              0.000021     let w:paren_hl_on = 0
+  109              0.000085   endif
+
+FUNCTION  scala#LineEndsInIncomplete()
+    Defined: /usr/share/nvim/runtime/indent/scala.vim:60
+Called 4 times
+Total time:   0.000020
+ Self time:   0.000020
+
+count  total (s)   self (s)
+    4              0.000011   if a:line =~ '[.,]\s*$'
+                                return 1
+    4              0.000001   else
+    4              0.000002     return 0
+                              endif
+
+FUNCTION  scala#Test()
+    Defined: /usr/share/nvim/runtime/indent/scala.vim:288
+Called 4 times
+Total time:   0.000860
+ Self time:   0.000021
+
+count  total (s)   self (s)
+    4   0.000858   0.000020   return scala#Testhelper(a:lnum, a:line, a:openBracket, a:closedBracket, 0)
+
+FUNCTION  <SNR>19_Highlight_Matching_Pair()
+    Defined: /usr/share/nvim/runtime/plugin/matchparen.vim:39
+Called 109 times
+Total time:   0.010245
+ Self time:   0.008975
+
+count  total (s)   self (s)
+                              " Remove any previous match.
+  109   0.001518   0.000575   call s:Remove_Matches()
+                            
+                              " Avoid that we remove the popup menu.
+                              " Return when there are no colors (looks like the cursor jumps).
+  109              0.000337   if pumvisible() || (&t_Co < 8 && !has("gui_running"))
+                                return
+  109              0.000046   endif
+                            
+                              " Get the character under the cursor and check if it's in 'matchpairs'.
+  109              0.000245   let c_lnum = line('.')
+  109              0.000182   let c_col = col('.')
+  109              0.000091   let before = 0
+                            
+  109              0.000219   let text = getline(c_lnum)
+  109              0.001091   let matches = matchlist(text, '\(.\)\=\%'.c_col.'c\(.\=\)')
+  109              0.000154   if empty(matches)
+                                let [c_before, c] = ['', '']
+  109              0.000052   else
+  109              0.000304     let [c_before, c] = matches[1:2]
+  109              0.000053   endif
+  109              0.000846   let plist = split(&matchpairs, '.\zs[:,]')
+  109              0.000217   let i = index(plist, c)
+  109              0.000084   if i < 0
+                                " not found, in Insert mode try character before the cursor
+   99              0.000213     if c_col > 1 && (mode() == 'i' || mode() == 'R')
+   70              0.000117       let before = strlen(c_before)
+   70              0.000061       let c = c_before
+   70              0.000099       let i = index(plist, c)
+   99              0.000042     endif
+   99              0.000063     if i < 0
+                                  " not found, nothing to do
+   99              0.000073       return
+                                endif
+   10              0.000003   endif
+                            
+                              " Figure out the arguments for searchpairpos().
+   10              0.000009   if i % 2 == 0
+    6              0.000006     let s_flags = 'nW'
+    6              0.000010     let c2 = plist[i + 1]
+    4              0.000001   else
+    4              0.000004     let s_flags = 'nbW'
+    4              0.000004     let c2 = c
+    4              0.000006     let c = plist[i - 1]
+   10              0.000004   endif
+   10              0.000010   if c == '['
+                                let c = '\['
+                                let c2 = '\]'
+   10              0.000003   endif
+                            
+                              " Find the match.  When it was just before the cursor move it there for a
+                              " moment.
+   10              0.000008   if before > 0
+                                let has_getcurpos = exists("*getcurpos")
+                                if has_getcurpos
+                                  " getcurpos() is more efficient but doesn't exist before 7.4.313.
+                                  let save_cursor = getcurpos()
+                                else
+                                  let save_cursor = winsaveview()
+                                endif
+                                call cursor(c_lnum, c_col - before)
+   10              0.000003   endif
+                            
+   10              0.000042   if !has("syntax") || !exists("g:syntax_on")
+                                let s_skip = "0"
+   10              0.000004   else
+                                " Build an expression that detects whether the current cursor position is
+                                " in certain syntax types (string, comment, etc.), for use as
+                                " searchpairpos()'s skip argument.
+                                " We match "escape" for special items, such as lispEscapeSpecial, and
+                                " match "symbol" for lispBarSymbol.
+   10              0.000028     let s_skip = 'synstack(".", col("."))' . '->indexof({_, id -> synIDattr(id, "name") =~? ' . '"string\\|character\\|singlequote\\|escape\\|symbol\\|comment"}) >= 0'
+                                " If executing the expression determines that the cursor is currently in
+                                " one of the syntax types, then we want searchpairpos() to find the pair
+                                " within those syntax types (i.e., not skip).  Otherwise, the cursor is
+                                " outside of the syntax types and s_skip should keep its value so we skip
+                                " any matching pair inside the syntax types.
+                                " Catch if this throws E363: pattern uses more memory than 'maxmempattern'.
+   10              0.000008     try
+   10   0.000741   0.000631       execute 'if ' . s_skip . ' | let s_skip = "0" | endif'
+                                catch /^Vim\%((\a\+)\)\=:E363/
+                                  " We won't find anything, so skip searching, should keep Vim responsive.
+                                  return
+   10              0.000006     endtry
+   10              0.000004   endif
+                            
+                              " Limit the search to lines visible in the window.
+   10              0.000020   let stoplinebottom = line('w$')
+   10              0.000014   let stoplinetop = line('w0')
+   10              0.000009   if i % 2 == 0
+    6              0.000012     let stopline = stoplinebottom
+    4              0.000001   else
+    4              0.000006     let stopline = stoplinetop
+   10              0.000004   endif
+                            
+                              " Limit the search time to 300 msec to avoid a hang on very long lines.
+                              " This fails when a timeout is not supported.
+   10              0.000017   if mode() == 'i' || mode() == 'R'
+                                let timeout = exists("b:matchparen_insert_timeout") ? b:matchparen_insert_timeout : g:matchparen_insert_timeout
+   10              0.000004   else
+   10              0.000025     let timeout = exists("b:matchparen_timeout") ? b:matchparen_timeout : g:matchparen_timeout
+   10              0.000004   endif
+   10              0.000005   try
+   10   0.001503   0.001287     let [m_lnum, m_col] = searchpairpos(c, '', c2, s_flags, s_skip, stopline, timeout)
+                              catch /E118/
+                                " Can't use the timeout, restrict the stopline a bit more to avoid taking
+                                " a long time on closed folds and long lines.
+                                " The "viewable" variables give a range in which we can scroll while
+                                " keeping the cursor at the same position.
+                                " adjustedScrolloff accounts for very large numbers of scrolloff.
+                                let adjustedScrolloff = min([&scrolloff, (line('w$') - line('w0')) / 2])
+                                let bottom_viewable = min([line('$'), c_lnum + &lines - adjustedScrolloff - 2])
+                                let top_viewable = max([1, c_lnum-&lines+adjustedScrolloff + 2])
+                                " one of these stoplines will be adjusted below, but the current values are
+                                " minimal boundaries within the current window
+                                if i % 2 == 0
+                                  if has("byte_offset") && has("syntax_items") && &smc > 0
+                            	let stopbyte = min([line2byte("$"), line2byte(".") + col(".") + &smc * 2])
+                            	let stopline = min([bottom_viewable, byte2line(stopbyte)])
+                                  else
+                            	let stopline = min([bottom_viewable, c_lnum + 100])
+                                  endif
+                                  let stoplinebottom = stopline
+                                else
+                                  if has("byte_offset") && has("syntax_items") && &smc > 0
+                            	let stopbyte = max([1, line2byte(".") + col(".") - &smc * 2])
+                            	let stopline = max([top_viewable, byte2line(stopbyte)])
+                                  else
+                            	let stopline = max([top_viewable, c_lnum - 100])
+                                  endif
+                                  let stoplinetop = stopline
+                                endif
+                                let [m_lnum, m_col] = searchpairpos(c, '', c2, s_flags, s_skip, stopline)
+   10              0.000005   endtry
+                            
+   10              0.000008   if before > 0
+                                if has_getcurpos
+                                  call setpos('.', save_cursor)
+                                else
+                                  call winrestview(save_cursor)
+                                endif
+   10              0.000004   endif
+                            
+                              " If a match is found setup match highlighting.
+   10              0.000015   if m_lnum > 0 && m_lnum >= stoplinetop && m_lnum <= stoplinebottom 
+    7              0.000012     if exists('*matchaddpos')
+    7              0.000040       call matchaddpos('MatchParen', [[c_lnum, c_col - before], [m_lnum, m_col]], 10, 3)
+                                else
+                                  exe '3match MatchParen /\(\%' . c_lnum . 'l\%' . (c_col - before) . 'c\)\|\(\%' . m_lnum . 'l\%' . m_col . 'c\)/'
+    7              0.000003     endif
+    7              0.000008     let w:paren_hl_on = 1
+   10              0.000004   endif
+
+FUNCTION  scala#ConditionalConfirm()
+    Defined: /usr/share/nvim/runtime/indent/scala.vim:33
+Called 8 times
+Total time:   0.000014
+ Self time:   0.000014
+
+count  total (s)   self (s)
+    8              0.000003   if 0
+                                call confirm(a:msg)
+    8              0.000002   endif
+
+FUNCTIONS SORTED ON TOTAL TIME
+count  total (s)   self (s)  function
+  109   0.010245   0.008975  <SNR>19_Highlight_Matching_Pair()
+    4   0.002921   0.001331  GetScalaIndent()
+    8   0.001462   0.000220  scala#Testhelper()
+  109   0.000944             <SNR>19_Remove_Matches()
+    4   0.000860   0.000021  scala#Test()
+   32   0.000410             scala#CountBrackets()
+    8   0.000340             scala#LineCompletesIfElse()
+   16   0.000210             scala#GetLine()
+    8   0.000128   0.000034  scala#CountCurlies()
+    8   0.000116   0.000029  scala#CountParens()
+    4   0.000104             scala#MatchesIncompleteDefValr()
+    4   0.000020             scala#LineEndsInIncomplete()
+    4   0.000016             scala#InvertBracketType()
+    4   0.000016             scala#LineIsAClosingXML()
+    8   0.000014             scala#ConditionalConfirm()
+    4   0.000009             scala#GetPrevCodeLine()
+
+FUNCTIONS SORTED ON SELF TIME
+count  total (s)   self (s)  function
+  109   0.010245   0.008975  <SNR>19_Highlight_Matching_Pair()
+    4   0.002921   0.001331  GetScalaIndent()
+  109              0.000944  <SNR>19_Remove_Matches()
+   32              0.000410  scala#CountBrackets()
+    8              0.000340  scala#LineCompletesIfElse()
+    8   0.001462   0.000220  scala#Testhelper()
+   16              0.000210  scala#GetLine()
+    4              0.000104  scala#MatchesIncompleteDefValr()
+    8   0.000128   0.000034  scala#CountCurlies()
+    8   0.000116   0.000029  scala#CountParens()
+    4   0.000860   0.000021  scala#Test()
+    4              0.000020  scala#LineEndsInIncomplete()
+    4              0.000016  scala#InvertBracketType()
+    4              0.000016  scala#LineIsAClosingXML()
+    8              0.000014  scala#ConditionalConfirm()
+    4              0.000009  scala#GetPrevCodeLine()
+

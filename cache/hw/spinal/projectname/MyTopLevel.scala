@@ -11,19 +11,23 @@ import spinal.core._
 // (31 - 14)  (13 - 6)    (5 - 2)         (1 - 0)
 
 
-class Tag() extends Bundle {
+case class Tag() extends Bundle {
   
   val valid = Bool()
+  val dirty = Bool()
   val tag = UInt(18 bits)
 }
 
-class Block() extends Bundle {
+case class Block() extends Bundle {
 
   val data = Vec.fill(16)(Bits (32 bits))
 }
 
 // Hardware definition
-case class Cache() extends Component {
+class Cache() extends Component {
+  import Tag._
+  import Block._
+
   val io = new Bundle {
 
     val read = in Bool()

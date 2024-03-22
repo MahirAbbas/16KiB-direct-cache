@@ -1,4 +1,4 @@
 [debug] [cache-build] Classpath dependencies List()
 [debug] [cache-build] Dependencies from configurations List()
-[debug] Bloop wrote the configuration of project 'cache-build' to '/home/mahir/git/spinalhdl/cache-labs/direct-cache/16KiB-direct-cache/cache/project/.bloop/cache-build.json'
+[debug] Bloop wrote the configuration of project 'cache-build' to '/home/mahir/fun/git/16KiB-direct-cache/cache/project/.bloop/cache-build.json'
 [success] Generated .bloop/cache-build.json

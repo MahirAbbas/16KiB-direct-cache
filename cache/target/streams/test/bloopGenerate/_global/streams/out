@@ -1,4 +1,4 @@
 [debug] [projectname-test] Classpath dependencies List()
 [debug] [projectname-test] Dependencies from configurations List(projectname)
-[debug] Bloop wrote the configuration of project 'projectname-test' to '/home/mahir/fun/git/16KiB-direct-cache/cache/.bloop/projectname-test.json'
+[debug] Bloop wrote the configuration of project 'projectname-test' to '/home/mahir/git/spinalhdl/cache-labs/direct-cache/16KiB-direct-cache/cache/.bloop/projectname-test.json'
 [success] Generated .bloop/projectname-test.json

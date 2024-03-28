@@ -6,75 +6,7 @@ import spinal.lib.fsm._
 
 
 // Loads data from Cache into CPU
-case class DataLoadPort(datawidth : Int) extends Bundle with IMasterSlave {
-  
-  val cmd = Stream(DataLoadCmd(datawidth))
-  val rsp = Flow(DataLoadRsp(datawidth))
-
-  override def asMaster(): Unit = {
-    master(cmd)
-    slave(rsp)
-  }
-
-}
-
-case class DataLoadCmd(datawidth : Int) extends Bundle {
-  val address = UInt(datawidth bits)
-
-}
-
-case class DataLoadRsp(datawidth : Int) extends Bundle {
-
-  val data = Bits(datawidth bits)
-  val fault = Bool()
-  
-}
-
-// Stores data from CPU into Cache
-
-case class DataStorePort(datawidth : Int) extends Bundle with IMasterSlave {
-
-  val cmd = Stream(DataStoreCmd(datawidth))
-  val rsp = Flow(DataStoreRsp(datawidth))
-
-  override def asMaster(): Unit = {
-    master(cmd)
-    slave(rsp)
-  }
-
-}
-
-case class DataStoreCmd(datawidth : Int) extends Bundle {
-  val address = UInt(datawidth bits)
-  val data = Bits(datawidth bits)
-  
-}
-
-case class DataStoreRsp(datawidth : Int) extends Bundle {
-  val address = UInt(datawidth bits)
-  val success = Bool()
-}
-
-
-// Hardware definition
-// 
-
-case class DataCacheParameters(cacheSize: Int,
-                               cpuDataWidth: Int,
-                               lineSize: Int = 64,
-                               loadReadBanksAt: Int = 0,
-                               loadReadTagsAt: Int = 1,
-                               loadBankMuxesAt: Int = 1,
-                               loadBankMuxAt: Int = 2,
-                               loadControlAt: Int = 2,
-                               storeControlAt: Int = 2,
-                               tagsReadAsync : Boolean = true,
-                               reducedBankWidth : Boolean = false){
-}
-                               
-
-
-
+// Loads data into CPU from Cache
 class DataCache(datawidth : Int) extends Component {
 
   case class Tag() extends Bundle {
